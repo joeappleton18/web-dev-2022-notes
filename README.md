@@ -72,12 +72,12 @@ The proposed courses schedule can be seen below. It is subject to change, for in
 | :--: | --------------------------------- |
 |  1   | The latest features of JavaScript |
 |  2   | React Fundamentals                |
-|  4   | State Management & Deployment     |
-|  5   | Styles in CSS and Routing         |
+|  3   | CSS and Themes          |
+|  4   | State Management  |
+|  5   | Advanced State Management and Routing    |                  
 |  6   | Forms, Validation  and Firebase Authentication|
-|  7   |  Unit  Testing				       |
-|  8   | Advanced State Management         |
-|  9   |  Authenticated Routes          |
-|  10  | Managing Data In Firebase         |
-|  11  | Advanced Security Rules and Cloud Functions|                                 
-|  12        |  Assessment Checkin and Support |
+|  7   |  Unit  Testing				    |
+|  8   |  Authenticated Routes          |
+|  9  | Managing Data In Firebase         |
+|  10  | Advanced Security Rules and Cloud Functions|                                 
+|  11  |  Assessment Checkin and Support |
