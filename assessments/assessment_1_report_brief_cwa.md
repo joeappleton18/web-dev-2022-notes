@@ -18,8 +18,8 @@
 | Consequence of not meeting time/word count limit:     | Assignments should be presented appropriately in line with the restrictions stated above; if an assignment exceeds the time/word count this will be taken in account in the marks given using the assessment criteria shown.*                                        |
 | Individual/Group:                 | Individual                                             |
 | Assessment Weighting:             | 30%                                                    |
-| Issue Date:                       | TBC                                                    |
-| Hand In Date:                     | TBC                                                    |
+| Issue Date:                       | Oct                                                    |
+| Hand In Date:                     | 4pm, Friday, 13th November, 2020                                                   |
 | Mode of Submission:               | On the course SOL page                                 |
 | Number of copies to be submitted: | 1                                                      |
 
