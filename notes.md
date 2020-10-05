@@ -4,7 +4,7 @@
 |  2   | React Fundamentals                |
 |  3   | Components and State management   |
 |  4   | Styles in CSS                     |
-|  4   |  Unit testing						   |
+|  5   | Testing and Deployment			   |
 |  4   | Routing                           |
 |  5   | Forms and Validation              |
 |  6   | Advanced State Management         |
@@ -12,6 +12,7 @@
 |  8   | Authenticated Routes              |
 |  9   | Managing Data In Firebase         |
 |  10  | Firebase Authentication and Cloud Functions|                                 
+|  11  | Assessment Checkin and Support |
 |  11  | Assessment Checkin and Support |
 
 

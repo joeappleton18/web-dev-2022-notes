@@ -43,9 +43,12 @@ Speaking broadly, React offers the following benefits:
 
 1.1 From within command line run:
 
-```npx create-react-app web-dev-for-industry-practical
+```js
+npx create-react-app web-dev-for-industry-practical
 cd my-app
-npm start```
+npm start
+
+```
 
 
 1.2 Version control your work and upload it to a GitHub Repo

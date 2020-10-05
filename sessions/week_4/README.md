@@ -5,7 +5,7 @@
 ## Session Dependencies
 
 This practical assumes you are up-to-date with the homework from last week. 
-[If, for whatever reason you have fallen behind, you can get the latest solution from my github repository](joeappleton18/web-dev-industry-practical/). You should note that I have gone a little further and created the menu, you may just want to work with my version of the project.
+[If, for whatever reason you have fallen behind, you can get the latest solution from my github repository](http://github.com/joeappleton18/web-dev-industry-practical). You should note that I have gone a little further and created the menu, you may just want to work with my version of the project.
 
 [You will also need to access the mockup for these practical sessions](https://www.figma.com/file/rTbqRpRWOw7UYg28SBcxQv/web-dev-pratical-task-made-using-toxin-ui?node-id=31264%3A79)
 
@@ -188,11 +188,12 @@ function Header() {
 
 
 
-::: ## Task 5 - Completing the menu
+:::tip
+
+## Task 5 - Completing the menu
 
 You may have noticed that our menu does not close! For the final task consider the following:
 
 - How would you add an X to the top right of the menu? When it is clicked it should communicate to the Header component and the state should be updated accordingly? [Remember, state flows down - this means you'll need to consider how you would communicate between child and parent components](https://www.pluralsight.com/guides/react-communicating-between-components)
 
 :::
-

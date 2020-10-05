@@ -5,7 +5,7 @@
 ## Session Dependencies
 
 This practical assumes you are up-to-date with the homework from last week. 
-[If, for whatever reason you have fallen behind, you can get the latest solution from my github repository](joeappleton18/web-dev-industry-practical/) 
+[If, for whatever reason you have fallen behind, you can get the latest solution from my github repository](http://github.com/joeappleton18/web-dev-industry-practical) 
 
 [You will also need to access the mockup for these practical sessions](https://www.figma.com/file/rTbqRpRWOw7UYg28SBcxQv/web-dev-pratical-task-made-using-toxin-ui?node-id=31264%3A79)
 
@@ -103,7 +103,7 @@ From command line use npm to install the following dependencies:
 	npm install --save styled-components
 ```  
 
-Next, need to tell babel to actually use the `babel-plugin-styled-components` preset component.  In the root of your project, create a `.babelrc` file and add the following snippet of JSON:
+Next, we need to tell babel to actually use the `babel-plugin-styled-components` preset component.  In the root of your project, create a `.babelrc` file and add the following snippet of JSON:
 
 ```javascript
 	{
@@ -111,7 +111,7 @@ Next, need to tell babel to actually use the `babel-plugin-styled-components` pr
 	}
 ```
 
-Remember, we used create-react-app to scaffold our application. As such, under the hood, all of our configuration is taken care of. However this presents an issue as the default config will ignore our `.babel` file. We can "eject" the application, this will move all of the configuration files directly into our project this seems quite extreme. Instead, we are going to use [customize-cra](https://github.com/arackaf/customize-cra) to edit our config without ejecting.   
+Remember, we used create-react-app to scaffold our application. As such, under the hood, all of our configuration is taken care of. However this presents an issue as the default config will ignore our `.babel` file. We can "eject" the application, this will move all of the configuration files directly into our project, however, this seems quite extreme. Instead, we are going to use [customize-cra](https://github.com/arackaf/customize-cra) to edit our config without ejecting.   
 
 First, install `customize-cra` and its dependency `react-app-rewired`.
 
@@ -133,9 +133,9 @@ Finally, updated your `package.json` file to run `react-app-rewired` as opposed 
 
 ```javascript
 "scripts": {
- "start": "react-app-rewired start start",
- "build": "react-app-rewired start build",
- "test": "react-app-rewired start test",
+ "start": "react-app-rewired start",
+ "build": "react-app-rewired build",
+ "test": "react-app-rewired  test",
  "eject": "react-scripts eject"
  }
 ```
