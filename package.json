@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "vuepress build && firebase deploy"
+    "deploy": "vuepress build && git add -A && git commit -m 'bot commit' && git push --force"
   },
   "author": "",
   "license": "ISC",
