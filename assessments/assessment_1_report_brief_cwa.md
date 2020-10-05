@@ -25,7 +25,7 @@
 
 The practical outcomes for this unit are to create a responsive single page web-application (SPA) that supports Solent University students in some aspect of their day-to-day lives. To this end, over the course of two assessments you will use a data driven approach to identify a specific area in which students are being underserved and implement a prototype SPA to better serve students in your identified problem space.
 
-![](./design_thinking_process_assessment_2.png)
+![](./design_thinking_process.png)
 
 **Figure 1**, [The design thinking methodology, adapted from Interaction Design Foundation (n.d.).](https://www.interaction-design.org/literature/article/5-stages-in-the-design-thinking-process)
 
