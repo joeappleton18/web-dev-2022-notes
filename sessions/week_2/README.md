@@ -278,7 +278,7 @@ See if you can work out how to update `<DaysCompleted>` so `<Tile>` is wrapped a
 
 ## Task 5 Styling the days completed text :rocket:
 
-<! -- ![](./assets/days_complete.png) -->
+[](./assets/days_complete.png)
 
 Can you work out how to style the days completed text?
 
