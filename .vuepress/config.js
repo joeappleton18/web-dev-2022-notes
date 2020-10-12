@@ -15,6 +15,11 @@ module.exports = {
         collapsable: true,
         children: ["/sessions/week_1/"],
       },
+      {
+        title: "Week 2 - Introducing React",
+        collapsable: true,
+        children: ["/sessions/week_2/"],
+      },
     ],
   },
 };
