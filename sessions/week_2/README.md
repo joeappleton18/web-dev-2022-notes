@@ -46,6 +46,8 @@ For the more visually inclined I have created a tutorial walking you through thi
 
 ## Task 1 Create your first react application :rocket:
 
+<iframe src="https://solent.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=052d879f-385a-4c8e-a0f4-ac5201289fe6&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=182&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 1.1 From within command line run:
 
 ```js
@@ -140,6 +142,8 @@ Typically a single folder or file represents a component, all of these component
 :::tip
 
 ## Task 3 Set Up a Component :rocket:
+
+<iframe src="https://solent.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=052d879f-385a-4c8e-a0f4-ac5201289fe6&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=1143&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 - Crate a folder `Components` in the src folder - 'src/Components'
 - Create the file `src/Components/DaysCompleted.js`
@@ -245,6 +249,8 @@ Can you see the border is slightly raised, creating a tile effect? This effect w
 
 ## Task 4 Compositional components :rocket:
 
+<iframe src="https://solent.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=052d879f-385a-4c8e-a0f4-ac5201289fe6&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=1946&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 Let's create a wrap-around component - also known as a compositional component. Create a new file `Components/Tile.js`. Add the following code:
 
 ```js
@@ -270,7 +276,7 @@ See if you can work out how to update `<DaysCompleted>` so `<Tile>` is wrapped a
 
 :::tip
 
-## Task 4 Styling the days completed text :rocket:
+## Task 5 Styling the days completed text :rocket:
 
 <! -- ![](./assets/days_complete.png) -->
 
@@ -280,7 +286,7 @@ Can you work out how to style the days completed text?
 
 :::tip
 
-## Task 5 Optional - Have a go at finishing of the component :rocket:
+## Task 6 Optional - Have a go at finishing of the component :rocket:
 
 **Tip:** You should look to compose your component using multiple sub components
 
