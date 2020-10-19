@@ -15,9 +15,6 @@ This practical assumes you are up-to-date with the homework from last week.
 
 [You will also need to access the mockup for these practical sessions](https://www.figma.com/file/rTbqRpRWOw7UYg28SBcxQv/web-dev-pratical-task-made-using-toxin-ui?node-id=31262%3A3)
 
-:::
-
-
 
 ## Loops
 
@@ -32,7 +29,7 @@ const listItems = numbers.map((number) => (
 
 We can simply use an array map function (see above) to render array structured data into our views. 
 
-## A Real World Focus
+## A Real World Example
 
 
 Let's revisit what our completed `DaysCompleted` component should look like:
@@ -41,17 +38,17 @@ Let's revisit what our completed `DaysCompleted` component should look like:
 
 To add further context, each histogram bar represents a percentage score from the last 10 days. As you can imagine, this information will be receive from an external data source. However, we don't really know what that is going to look like yet. Until this is the case, we will have to mock our data.
 
-:::warning
+:::warning Tip
 
 You can use technique if you are trying to mock functionality that is too complex to implement for your final assessment.
 
-::::
-
 Commonly, several components will need to reflect changes in data. Remember, data in a React application flows one-way, from parent to child. As such, it is common practice to lift the state to a top-level component (e.g. App.js).
 
-::: tip
+:::
 
-## Task 1 Mocking Data
+::: tip  Task 1
+
+## Task 1 Mocking Data :rocket:
 
 Let's create a data structure that contains check-in scores out of 20. Within App.js, create the following data structure:
 
@@ -73,10 +70,13 @@ const checkins = [
   {date: "Wed Jan 15 2020 07:17:11 GMT+0000 (Greenwich Mean Time)", score: 20}]
 
 ```
-
+:::
 <!-- <<add video>> -->
 
-## Task 2 Completing `DaysCompleted` component
+:::tip Task 2
+
+## Task 2 Completing `DaysCompleted` component :rocket:
+
 
 - [I have started the histogram component for you](https://github.com/joeappleton18/web-dev-industry-practical/blob/master/src/Components/Histogram.js) - complete it! Data should feed into `DaysCompleted` first.
 - Finally, create the progress bar. To do this you will need to create and use a new component called `ProgressBar`
@@ -85,7 +85,8 @@ const checkins = [
 
 - As a user, I should be able to view how many days have been completed in text and as a percentage, so I know how close to my goal I am
 - As a user, I should be able to view a histogram of, up to, my last 10 check-ins, so I can track my progress as a daily percentage out of 20
-- :::
+
+:::
 
 
 ## Styling Our Application
@@ -129,10 +130,11 @@ You have already used CSS-in-JS. For instance, consider setting the inline style
 Creating inline styles using JavaScript objects, is one way of working using a CSS-in-JS pattern, and a perfectly reasonable one. However, many third-party libraries provide more sophisticated solutions (see https://github.com/MicheleBertoli/css-in-js).
 
 While, as mentioned above, there are many styling solutions. [https://styled-components.com/](https://styled-components.com/docs/basics#motivation), for me, presented itself as a simple yet powerful theming solution for React Applications.
+:::
 
 :::tip
 
-## Task 3 - Understand the Why
+## Task 3 - Understand the Why :rocket:
 
 I always like to know the philosophical position of any third-party library that I use. To access this, I consider what sort of problem they are trying to solve? Moreover, I ask myself the question; will my application, moving forward run into this problem?
 
@@ -144,9 +146,9 @@ For this first task, spend [5 minutes reading the motivations behind](https://st
 
 Let's get going, the first thing we need to do is install the styled-components node package. This is a little more involved than I would like as, to get the most out of the styled-components library, we need to install and configure the babel preset.
 
-:::tip
+:::tip Task 4
 
-## Task 4 - Installing styled-components
+## Task 4 - Installing styled-components :rocket:
 
 From command line use npm to install the following dependencies:
 
@@ -192,6 +194,7 @@ module.exports = override(useBabelRc());
 
 Finally, you will need to restart your web application for these changes to take effect. Phew,I appreciate this process was a little painful. However, we only need to do it once.
 
+:::
 
 ## Styled-Components - the basics
 
@@ -253,9 +256,10 @@ const DaysCompleteHeading = styled.h2`
 
 Let's try and break this down. `styled.h2` is in-fact a function provided by `styled-components`. There is a different function for every type of html element. We are then utilising tagged template literals (a recent addition to JavaScript) to write actual CSS code to style the h2 tag. Notice how everything in the "``" is just normal css. Also, note how we are writing CSS, this is not a JavaScript object literal.
 
-:::tip
+:::tip Task 5
 
-## Task 5 - Styling our application
+## Task 5 - Styling our application :rocket:
+
 
 - Style the days complete component using styled components
 
@@ -296,7 +300,7 @@ So far, I hope that I have demonstrated that styled-components offer a powerful 
 
 Let's add some global styles to our application.
 
-::: tip
+::: tip Task 6
 
 ## Task 6 - Creating Global Styles
 
@@ -375,7 +379,7 @@ One of the key features that really sold me on `styled-components` is it allows 
 
 :::tip
 
-## Task 7 - Themes
+## Task 7 - Themes :rocket:
 
 Create `src/config/theme.js` and add the following code:
 
@@ -451,15 +455,17 @@ Above, you can see that our theme now gets injected into any function that we us
 
 
 
-:::tip
+:::tip  Task 8
 
-## Task 8 - Expanding on our Theme
+
+## Task 8 - Expanding on our Theme :rocket:
+
 
 Think about how we might expand on our theme so it better represents the style guide above. You can get as in-depth as you like here. For inspiration, you can consider this, huge, [theme object found in the material-ui library](https://material-ui.com/customization/default-theme/). Your theme will be a fraction of this size. However, you should always use inspiration.
 
 :::
 
-:::tip
+:::tip Task 9
 
 # Task 9 - Completing the Dash (if you want a challenge)
 

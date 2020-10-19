@@ -21,7 +21,7 @@ module.exports = {
         children: ["/sessions/week_2/"],
       },
       {
-        title: "Week 3 - Styling and Further React",
+        title: "Week 3 and Week 4 - Styling and Further React",
         collapsable: true,
         children: ["/sessions/week_3/"],
       },
