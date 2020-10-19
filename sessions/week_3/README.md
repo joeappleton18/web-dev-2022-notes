@@ -1,3 +1,13 @@
+
+## Styling Components and Further React Basics
+
+You'll recall, last week we started to explore the basics of React. In doing so, we started to style our application. However, we were using inline styles. While this is a perfectly reasonable solution, it does not allow us to easily reuse styles. In short, we need a slightly more sophisticated styling solution. As such, this week I will be introducing styled components. **However, before we explore styled components we'll look a few more react basics**
+
+Primarily, we will be addressing the following question:
+
+**How can we ensure a consistent look and feel across our applications?**
+
+
 ## Session Dependencies
 
 This practical assumes you are up-to-date with the homework from last week.
@@ -8,14 +18,6 @@ This practical assumes you are up-to-date with the homework from last week.
 :::
 
 
-## Styling Components and Further React Basics
-
-You'll recall, last week we started to explore the basics of React. In doing so, we started to style our application. However, we were using inline styles. While this is a perfectly reasonable solution, it does not allow us to easily reuse styles. In short, we need a slightly more sophisticated styling solution. As such, this week I will be introducing styled components. **However, before we explore styled components we'll look a few more react basics**
-
-
-Primarily, we will be addressing the following question:
-
-**How can we ensure a consistent look and feel across our applications?**
 
 ## Loops
 
@@ -49,7 +51,7 @@ Commonly, several components will need to reflect changes in data. Remember, dat
 
 ::: tip
 
-### Task 1 Mocking Data
+## Task 1 Mocking Data
 
 Let's create a data structure that contains check-in scores out of 20. Within App.js, create the following data structure:
 
@@ -72,9 +74,9 @@ const checkins = [
 
 ```
 
-<<add video>>
+<!-- <<add video>> -->
 
-### Task 2 Completing `DaysCompleted` component
+## Task 2 Completing `DaysCompleted` component
 
 - [I have started the histogram component for you](https://github.com/joeappleton18/web-dev-industry-practical/blob/master/src/Components/Histogram.js) - complete it! Data should feed into `DaysCompleted` first.
 - Finally, create the progress bar. To do this you will need to create and use a new component called `ProgressBar`
@@ -253,7 +255,7 @@ Let's try and break this down. `styled.h2` is in-fact a function provided by `st
 
 :::tip
 
-## Task 3 - Styling our application
+## Task 5 - Styling our application
 
 - Style the days complete component using styled components
 
@@ -296,7 +298,7 @@ Let's add some global styles to our application.
 
 ::: tip
 
-## Task 4 - Creating Global Styles
+## Task 6 - Creating Global Styles
 
 First, we need to consider where our global styles should live. There are no strict opinions on how we should structure our react applications. It is very much down to you as a developer.
 
@@ -373,7 +375,7 @@ One of the key features that really sold me on `styled-components` is it allows 
 
 :::tip
 
-## Task 5 - Themes
+## Task 7 - Themes
 
 Create `src/config/theme.js` and add the following code:
 
@@ -447,11 +449,11 @@ h1 {
 
 Above, you can see that our theme now gets injected into any function that we use to set a value of our css. We can then return the theme value, or, if we want return any value based on the theme.
 
-## Home Study/Overflow Tasks
+
 
 :::tip
 
-## Task 6 - Expanding on our Theme
+## Task 8 - Expanding on our Theme
 
 Think about how we might expand on our theme so it better represents the style guide above. You can get as in-depth as you like here. For inspiration, you can consider this, huge, [theme object found in the material-ui library](https://material-ui.com/customization/default-theme/). Your theme will be a fraction of this size. However, you should always use inspiration.
 
@@ -459,7 +461,7 @@ Think about how we might expand on our theme so it better represents the style g
 
 :::tip
 
-# Task 7 - Completing the Dash
+# Task 9 - Completing the Dash (if you want a challenge)
 
 Complete the `main_dash_view`:
 
