@@ -1,65 +1,25 @@
-# Overflow from last week
+## Session Dependencies
 
-## Styling Components
+This practical assumes you are up-to-date with the homework from last week.
+[If, for whatever reason you have fallen behind, you can get the latest solution from my github repository](https://github.com/joeappleton18/contemp-web-app-solutions)
 
-:::warning
-
-We are only looking at the basics today. There are better styling solutions that will be explored next week.
-
-:::
-
-Did you see how we styled `<Tile>`? We passed the JavaScript object, `divStyle` into the `style` attribute of our `div`. Representing css as a JavaScript object may seem odd; however, it comes with some advantages. See if you can appreciate these advantages by completing the below task:
-
-:::tip
-
-### Task 5 Conditional Styling
-
-Amend your application as follows:
-
-- Allow an optional `elevation` prop to be passed into your tile that increases the shadow depth.
-- You should set a default prop value as elevation is optional
-  :::
-
-:::tip
-
-### Task 6
-
-Update `DaysCompleted.js` to align the text to the center and make it the correct color `'#BC9CFF'`. This style should be saved to the const `textStyle` and applied as a inline style.
+[You will also need to access the mockup for these practical sessions](https://www.figma.com/file/rTbqRpRWOw7UYg28SBcxQv/web-dev-pratical-task-made-using-toxin-ui?node-id=31262%3A3)
 
 :::
 
-:::tip
 
-### Task 7
+## Styling Components and Further React Basics
 
-Let's make our app look a little nicer by adding some global styles. Notice how `App.css` is imported into `App.js`. Within `App.css` we can just use standard CSS rules. Copy the following rules in:
+You'll recall, last week we started to explore the basics of React. In doing so, we started to style our application. However, we were using inline styles. While this is a perfectly reasonable solution, it does not allow us to easily reuse styles. In short, we need a slightly more sophisticated styling solution. As such, this week I will be introducing styled components. **However, before we explore styled components we'll look a few more react basics**
 
-```css
-body {
-  font-family: Quicksand;
-}
 
-h1 {
-  font-size: 42px;
-}
+Primarily, we will be addressing the following question:
 
-h2 {
-  font-size: 32px;
-}
-
-h3 {
-  font-size: 32px;
-  font-size: 24px;
-}
-```
-
-Add the font Quicksand including the link `<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">` in the `<head>` of `public/index.html`.
-
-:::
+**How can we ensure a consistent look and feel across our applications?**
 
 ## Loops
 
-Often you will have to iterate over some data structure to construct your view, this is very easy to achieve in JSX. We can simply use an array map function.
+Often you will have to iterate over some data structure to construct your view, this is very easy to achieve in JSX. 
 
 ```js
 const numbers = [1, 2, 3, 4, 5];
@@ -68,15 +28,20 @@ const listItems = numbers.map((number) => (
 ));
 ```
 
-Let's revisit what our completed `DaysCompleted` component should look like.
+We can simply use an array map function (see above) to render array structured data into our views. 
+
+## A Real World Focus
+
+
+Let's revisit what our completed `DaysCompleted` component should look like:
 
 ![](./assets/completed_view.png)
 
-To add further context, each histogram bar represents a percentage score from the last 10 days. As you can imagine, this information will be receive from an external data source. However, we don't really know what that is going to look like yet. Until this is the case we will have to mock our data.
+To add further context, each histogram bar represents a percentage score from the last 10 days. As you can imagine, this information will be receive from an external data source. However, we don't really know what that is going to look like yet. Until this is the case, we will have to mock our data.
 
 :::warning
 
-You will rely heavily on this technique if you are following the design route for assessment 2.
+You can use technique if you are trying to mock functionality that is too complex to implement for your final assessment.
 
 ::::
 
@@ -84,7 +49,7 @@ Commonly, several components will need to reflect changes in data. Remember, dat
 
 ::: tip
 
-### Task 8 Mocking Data
+### Task 1 Mocking Data
 
 Let's create a data structure that contains check-in scores out of 20. Within App.js, create the following data structure:
 
@@ -103,16 +68,13 @@ const checkins = [
   {date: "Wed Jan 18 2020 07:17:11 GMT+0000 (Greenwich Mean Time)", score: 20},
   {date: "Wed Jan 17 2020 07:17:11 GMT+0000 (Greenwich Mean Time)", score: 20},
   {date: "Wed Jan 16 2020 07:17:11 GMT+0000 (Greenwich Mean Time)", score: 20},
-  {date: "Wed Jan 15 2020 07:17:11 GMT+0000 (Greenwich Mean Time)", score: 20},
-}]
+  {date: "Wed Jan 15 2020 07:17:11 GMT+0000 (Greenwich Mean Time)", score: 20}]
 
 ```
 
-:::
+<<add video>>
 
-:::tip
-
-### Task 9 Completing `DaysCompleted` component
+### Task 2 Completing `DaysCompleted` component
 
 - [I have started the histogram component for you](https://github.com/joeappleton18/web-dev-industry-practical/blob/master/src/Components/Histogram.js) - complete it! Data should feed into `DaysCompleted` first.
 - Finally, create the progress bar. To do this you will need to create and use a new component called `ProgressBar`
@@ -123,36 +85,10 @@ const checkins = [
 - As a user, I should be able to view a histogram of, up to, my last 10 check-ins, so I can track my progress as a daily percentage out of 20
 - :::
 
-# CSS and Themes
 
-:::warning
+## Styling Our Application
 
-## Session Dependencies
-
-This practical assumes you are up-to-date with the homework from last week.
-[If, for whatever reason you have fallen behind, you can get the latest solution from my github repository](http://github.com/joeappleton18/web-dev-industry-practical)
-
-[You will also need to access the mockup for these practical sessions](https://www.figma.com/file/rTbqRpRWOw7UYg28SBcxQv/web-dev-pratical-task-made-using-toxin-ui?node-id=31264%3A79)
-
-:::
-
-:::warning
-
-### Essential Reading :closed_book:
-
-[The React documentation on styles](https://reactjs.org/docs/faq-styling.html)
-
-[React: CSS in JS techniques comparison](https://github.com/MicheleBertoli/css-in-js)
-
-[The basics of styled components](https://styled-components.com/docs/basics)
-
-:::
-
-This week is going to be particularly interesting, I am going to present a solution that solves a fundamental challenge application developers face. The challenge can be reduced to the following question:
-
-How can we ensure a consistent look and feel across our applications?
-
-## A Style Guide
+Recall the core question for this week: **"How can we ensure a consistent look and feel across our applications?"**
 
 There are, of course, several ways to address the above question. To start with, a simple style guide can go a long way in presenting a solution.
 
@@ -162,15 +98,11 @@ There are, of course, several ways to address the above question. To start with,
 
 The above style guide, [part of our overall application design](https://www.figma.com/file/rTbqRpRWOw7UYg28SBcxQv/web-dev-pratical-task-made-using-toxin-ui?node-id=31275%3A269), lays the foundation colour schemes and font sizings. Crucially, it is in a language developers can quickly understand.
 
-:::warning
-For assessment 1 we will not need to create a style guide. We are focused on a solution, not granular design choices. For assessment two, Figure 1 represents the minimum level of detail I expect. This is fine if you are taking the, part 2, development route. However, if you are pursuing design, you'll need to take things further and consider aspects such as logo, branding and spacing.
-:::
-
 ## A Style Guide to A Living Themes
 
-We need a way of converting our style guide, above, into some sort of theming solution. We can, of course, use CSS, however, it somewhat lacks sophistication. Pre-processors, such as Syntactically Awesome Style Sheets (SASS), addressed some of the limitations of CSS by extending its capabilities allowing control structures and variables to be used.
+We need a way of converting our style guide, above, into some sort of theme. We can, of course, use CSS, however, it somewhat lacks sophistication. Pre-processors, such as Syntactically Awesome Style Sheets (SASS), addressed some of the limitations of CSS by extending its capabilities allowing control structures and variables to be used.
 
-SASS solved a lot of problems and still should be considered a go-to-solution for simple sites that require little to no JavaScript functionality. However, in this course, we are working with single-page web applications and we must assume ourselves and any developer on the project will be well versed in JavaScript. As such, while we could use SASS, JavaScript is far more powerful and can achieve everything SASS can and more. In realising this idea, recently we have seen a rise in `CSS-in-JS` libraries. Combining CSS with our JS is an odd concept, to begin with. However, unlike SASS, there is no need to learn a different syntax - you already know JavaScript. In summary, `CSS-in-JS` presents a very shallow learning curve and the upside of a powerful extension to traditional CSS.
+SASS solved a lot of problems and still should be considered a resonable solution for simple sites that require little to no JavaScript functionality. However, in this course, we are working with single-page web applications and we must assume ourselves and any developer on the project will be well versed in JavaScript. As such, while we could use SAS, JavaScript is far more powerful and can achieve everything SASS can and more. In realising this idea, recently we have seen a rise in `CSS-in-JS` libraries. Combining CSS with our JS is an odd concept, to begin with. However, unlike SASS, there is no need to learn a different syntax - you already know JavaScript. In summary, `CSS-in-JS` presents a very shallow learning curve and the upside of a powerful extension to traditional CSS.
 
 ## CSS-in-JS
 
@@ -198,7 +130,7 @@ While, as mentioned above, there are many styling solutions. [https://styled-com
 
 :::tip
 
-## Task 1 - Understand the Why
+## Task 3 - Understand the Why
 
 I always like to know the philosophical position of any third-party library that I use. To access this, I consider what sort of problem they are trying to solve? Moreover, I ask myself the question; will my application, moving forward run into this problem?
 
@@ -212,7 +144,7 @@ Let's get going, the first thing we need to do is install the styled-components 
 
 :::tip
 
-## Task 2 - Installing styled-components
+## Task 4 - Installing styled-components
 
 From command line use npm to install the following dependencies:
 
@@ -245,7 +177,7 @@ const { useBabelRc, override } = require("customize-cra");
 module.exports = override(useBabelRc());
 ```
 
-Finally, updated your `package.json` file to run `react-app-rewired` as opposed to `react-scripts`. The scripts section of your `package.json` file should read as follows:
+ Update your `package.json` file to run `react-app-rewired` as opposed to `react-scripts`. The scripts section of your `package.json` file should read as follows:
 
 ```javascript
 "scripts": {
@@ -256,13 +188,14 @@ Finally, updated your `package.json` file to run `react-app-rewired` as opposed 
  }
 ```
 
-:::
+Finally, you will need to restart your web application for these changes to take effect. Phew,I appreciate this process was a little painful. However, we only need to do it once.
+
 
 ## Styled-Components - the basics
 
 Styled components componetise your styles. In their words, "[it removes the mapping between components and styles](https://styled-components.com/docs/basics#getting-started)". Like React in general, this is going to be an odd concept begin with.
 
-Let's consider a concrete example, our [`DaysCompleted.js`](https://github.com/joeappleton18/web-dev-industry-practical/blob/master/src/Components/DaysCompleted.js). Below, I have refactored it using styles-components.
+Let's consider a concrete example, our `DaysCompleted.js`. Below, I have refactored it using styles-components.
 
 ```js
 ...
@@ -322,9 +255,11 @@ Let's try and break this down. `styled.h2` is in-fact a function provided by `st
 
 ## Task 3 - Styling our application
 
-Use styled-components to replace the inline styles in `<Histogram>` and `<ProgressBar>`.
+- Style the days complete component using styled components
 
-Next, consider `<Tile >`, use the documentation to work out how we might export a styled component, replacing our existing wrapped component. [Hint, you will need to pass in a prop to the styled component](https://styled-components.com/docs/basics#passed-props). Further, in our inline styles, currently `box-shadow` is camel cased to `boxShadow` to allow it to be used as a JavaScript object key. Remember, styled components use standard css not the camel cased alternative.
+- Use styled-components to replace the inline styles in `<Histogram>` and `<ProgressBar>`.
+
+- Finally, consider `<Tile >`, use the documentation to work out how we might export a styled component, replacing our existing wrapped component. [Hint, you will need to pass in a prop to the styled component](https://styled-components.com/docs/basics#passed-props). Further, in our inline styles, currently `box-shadow` is camel cased to `boxShadow` to allow it to be used as a JavaScript object key. Remember, styled components use standard css not the camel cased alternative.
 
 :::
 
@@ -531,3 +466,5 @@ Complete the `main_dash_view`:
 ![](./assets/main-dash.png)
 
 :::
+
+****
