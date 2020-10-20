@@ -3,7 +3,7 @@
 
 You'll recall, last week we started to explore the basics of React. In doing so, we started to style our application. However, we were using inline styles. While this is a perfectly reasonable solution, it does not allow us to easily reuse styles. In short, we need a slightly more sophisticated styling solution. As such, this week I will be introducing styled components. **However, before we explore styled components we'll look a few more react basics**
 
-Primarily, we will be addressing the following question:
+Primarily, for the next two weeks, we will be addressing the following question:
 
 **How can we ensure a consistent look and feel across our applications?**
 
@@ -78,7 +78,7 @@ const checkins = [
 ## Task 2 Completing `DaysCompleted` component :rocket:
 
 
-- [I have started the histogram component for you](https://github.com/joeappleton18/web-dev-industry-practical/blob/master/src/Components/Histogram.js) - complete it! Data should feed into `DaysCompleted` first.
+- I have started the histogram component for you (`/Components/Histogram.js`) - complete it! Data should feed into `DaysCompleted` first.
 - Finally, create the progress bar. To do this you will need to create and use a new component called `ProgressBar`
 
 - This part of our application should meet the following user stories:
