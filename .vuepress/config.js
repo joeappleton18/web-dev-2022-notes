@@ -29,7 +29,7 @@ module.exports = {
       {
         title: "Week 5 - State And Routes",
         collapsable: true,
-        children: ["/sessions/week_5/"],
+        children: ["/sessions/week_4/"],
       },
     ],
   },
