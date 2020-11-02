@@ -1,6 +1,7 @@
 # State Management and React Routing
 
-:::warning
+:::warning Dependencies
+
 
 ## Session Dependencies
 
@@ -12,7 +13,7 @@ This practical assumes you are up-to-date with the homework from last week.
 :::
 
 
-:::warning
+:::warning Reading
 
 ### Essential Reading :closed_book:
 
@@ -25,9 +26,6 @@ This practical assumes you are up-to-date with the homework from last week.
 This week we are moving away from styling and looking into the idea of state and state management. We will be addressing the question:
 
 **How can we manage the complex ever changing state of a web application?**
-
-
-
 
 ## What is State? 
 
@@ -102,14 +100,14 @@ Next, we use `useState` to set some state: `const [count, setCount] = useState(0
 
  `const [count, setCount] = useState(0);` uses array destructuring to save the two array elements in separate constants. We use whatever naming convention we want here, however, the React community uses: `[<name>, <setName>]`.
 
-:::tip
+:::tip 
 Within `handleClick()`, you can see that we use `setCount()` to increment our counter. **Notice how we do not directly modify count! This is rule number 1 - you must always use the associated sated setter - in this case `setCount()`**
 :::
 
 You'll see that we don't need to worry about binding the new counter value to the DOM - React does this for us. 
 
 
-:::tip
+:::tip Task
 ## Task 1 - Expanding on our counter application
 
 Type in and expand on the above example: 
@@ -125,12 +123,11 @@ Type in and expand on the above example:
 
 To explore the ideas of state in a little more depth we are going to turn our attention to our goal tracking application.
 
-:::tip
-
-Clone the latest version of the solution for our challenge tracking application `https://github.com/joeappleton18/contemp-web-app-solutions.git`. You should note, we are taking a mobile first approach. As such, the design may currently look a little odd on a full-size browser.
-
+::: Task
 
 ## Task 2 -  Adding State to our application
+
+- Clone the latest version of the solution for our challenge tracking application `https://github.com/joeappleton18/contemp-web-app-solutions.git`. You should note, we are taking a mobile first approach. As such, the design may currently look a little odd on a full-size browser.
 
 - Open `src/Components/Header.js` we have two components within this one file. The first is the parent component `Header`, notice how it has a child component `Menu`, which contains our menu. 
   
@@ -179,7 +176,7 @@ const  Header = () => {
 
 :::
 
-:::tip
+:::tip Task
 
 ## Task 5 - Completing the menu
 
@@ -202,8 +199,7 @@ You may have noticed that our menu does not close! For the final task consider t
 
 :::
 
-:::tip
-
+:::tip Task
 Optional advanced reading:
 
 [React documentation on the use effect hook](https://reactjs.org/docs/hooks-effect.html)
@@ -249,7 +245,7 @@ Let's explore this idea further by restructuring our existing application.
 
 
 
-:::tip 
+:::tip  Task
 ## Task 6 - Restructuring our application 
 
 The goal of this task is to restructure our application to conform to the above structure. Complete the following steps:
@@ -305,7 +301,7 @@ Now we have a workable application structure, we can consider how we can conditi
 
 While there are several Routing possibilities, the [React Router](https://reacttraining.com/react-router/web/guides/quick-start), provided by React Training, is by far the most popular Let's install and configure it:
 
-:::tip 
+:::tip  Task
 ## Task 7 - Installing and configuring the react-router
 
 The react-router is simple to install and configure:
