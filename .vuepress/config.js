@@ -25,6 +25,12 @@ module.exports = {
         collapsable: true,
         children: ["/sessions/week_3/"],
       },
+
+      {
+        title: "Week 5 - State And Routes",
+        collapsable: true,
+        children: ["/sessions/week_5/"],
+      },
     ],
   },
 };

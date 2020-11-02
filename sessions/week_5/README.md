@@ -43,7 +43,7 @@ There are patterns you can use (see [Structuring a Larger React Application](htt
 
 ### Application Structure
 
-We need to create an application that can serve multiple views. To begin with, let's consider the following:
+We need to create an application that can serve multiple views, e.g.:
 
 - Dash  (this is the default and our current view)
 - Join
@@ -64,10 +64,13 @@ The above views can be represented in the following file structure:
       |- Join.js
       |- Profile.js
 ```
-Using the above layout convention we compose components into larger views. I like this line of thinking as it represents the structure, from a user perspective, of our application.  Let's explore this idea further by restructuring our existing application.
+Using the above layout convention we compose components into larger views. I like this line of thinking as it represents the structure, from a user perspective, of our application.  
+
+
+Let's explore this idea further by restructuring our existing application.
 
 :::tip 
-## Task 1 - Restructuring our application 
+## Task 3 - Restructuring our application 
 
 The goal of this task is to restructure our application to conform to the above structure. Complete the following steps:
 
@@ -79,16 +82,12 @@ Boostrap it as a blank component. You can use the following code:
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function Dash(props) {
+const  Dash = (props) => {
     return (
         <div>
             <h1> Join </h1>
         </div>
     )
-}
-
-Dash.propTypes = {
-
 }
 
 export default Dash;
@@ -110,7 +109,7 @@ function App() {
 }
 ```
 
-Since we are going to be using a router to serve up different views, it would be handy to have more than just a single view. With this in mind, set up the below View components, that simply render an `<h1> </h1>`  containing the name of the component e.g. 'Join'
+Since we are going to be using a router to serve up different views, it would be handy to have more than just a single view. With this in mind, set up the below View components, that simply render an `<h1> </h1>`  containing the name of the component e.g. '<h1> Join </h1>'
 
 ```js
   - Views/Checkin.js
@@ -120,11 +119,11 @@ Since we are going to be using a router to serve up different views, it would be
 ```
 ::::
 
-## Routing 
+## Configuring Routing 
 
-Now we have a workable application structure we can consider how we can conditionally serve up different views based on a given URL - or even application state.  The concept of routing provides us with the functionality that we are looking for. However, React does not come with a router. As such, we need to install one. 
+Now we have a workable application structure, we can consider how we can conditionally serve up different views based on a given URL - or even application state.  The concept of routing provides us with the functionality that we are looking for. However, React does not come with a router; as such, we need to install one. 
 
-While there are several Routing possibilities, the [React Router](https://reacttraining.com/react-router/web/guides/quick-start), provided by React Training, is normally a go-to routing solution. Let's install and configure it:
+While there are several Routing possibilities, the [React Router](https://reacttraining.com/react-router/web/guides/quick-start), provided by React Training, is by far the most popular Let's install and configure it:
 
 :::tip 
 ## Task 2 - Installing and configuring the react-router
@@ -152,7 +151,13 @@ ReactDOM.render(<Router><App /></Router>, document.getElementById('root'));
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
 ```
+
+
+### Adding Routes
+
 We can now start adding routes. Open `src/App.js` and import the following dependencies:
+
+
 ```JavaScript
 import {
   Switch,
@@ -160,8 +165,15 @@ import {
   useLocation
 } from "react-router-dom";
 ```
-Also, import all of your views into your App component
-We can now add routes as follows:
+
+
+- Also, import all of your views into your App component.
+
+
+
+
+- We can now add routes as follows:
+
 ```js
 ...
 return (
