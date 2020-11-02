@@ -1,6 +1,10 @@
 
 ## Styling Components and Further React Basics
 
+## Solutions Video 
+
+<iframe src="https://solent.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=3a2a2b20-3b6d-4a00-a6cb-ac600109629a&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;start=0&amp;interactivity=all" height="405" width="720" allowfullscreen="" allow="autoplay"></iframe>
+
 You'll recall, last week we started to explore the basics of React. In doing so, we started to style our application. However, we were using inline styles. While this is a perfectly reasonable solution, it does not allow us to easily reuse styles. In short, we need a slightly more sophisticated styling solution. As such, this week I will be introducing styled components. **However, before we explore styled components we'll look a few more react basics**
 
 Primarily, for the next two weeks, we will be addressing the following question:

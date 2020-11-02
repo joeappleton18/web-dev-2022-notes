@@ -22,7 +22,11 @@ This practical assumes you are up-to-date with the homework from last week.
 
 :::
 
-This week we are moving away from styling and looking into the idea of state and state management. 
+This week we are moving away from styling and looking into the idea of state and state management. We will be addressing the question:
+
+**How can we manage the complex ever changing state of a web application?**
+
+
 
 
 ## What is State? 
