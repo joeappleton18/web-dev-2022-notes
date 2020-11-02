@@ -20,7 +20,7 @@ This practical assumes you are up-to-date with the homework from last week.
 [React State Hooks](https://reactjs.org/docs/hooks-overview.html#state-hook)
 [Component Communication](https://www.pluralsight.com/guides/react-communicating-between-components)
 
-:::
+:::tip
 
 This week we are moving away from styling and looking into the idea of state and state management. We will be addressing the question:
 
@@ -102,7 +102,7 @@ Next, we use `useState` to set some state: `const [count, setCount] = useState(0
 
  `const [count, setCount] = useState(0);` uses array destructuring to save the two array elements in separate constants. We use whatever naming convention we want here, however, the React community uses: `[<name>, <setName>]`.
 
-:::warning
+:::tip
 Within `handleClick()`, you can see that we use `setCount()` to increment our counter. **Notice how we do not directly modify count! This is rule number 1 - you must always use the associated sated setter - in this case `setCount()`**
 :::
 
@@ -125,7 +125,7 @@ Type in and expand on the above example:
 
 To explore the ideas of state in a little more depth we are going to turn our attention to our goal tracking application.
 
-:::warning
+:::tip
 
 Clone the latest version of the solution for our challenge tracking application `https://github.com/joeappleton18/contemp-web-app-solutions.git`. You should note, we are taking a mobile first approach. As such, the design may currently look a little odd on a full-size browser.
 
@@ -192,7 +192,7 @@ You may have noticed that our menu does not close! For the final task consider t
 
 ## Part Two React Routing
 
-:::warning
+:::tip
 
 ### Essential Reading :closed_book:
 
@@ -202,7 +202,7 @@ You may have noticed that our menu does not close! For the final task consider t
 
 :::
 
-:::warning
+:::tip
 
 Optional advanced reading:
 
