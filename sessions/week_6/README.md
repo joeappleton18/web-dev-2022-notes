@@ -1,17 +1,17 @@
 # Forms,Validation and Conditional Rendering
 
 
-:::warning 
+:::warning Dependencies 
 
 ## Session Dependencies 
 
-[Make sure that you have the latest of the ongoing class, fitness tracker, project. **The notes for this week refer extensively to this project**](http://github.com/joeappleton18/web-dev-industry-practical).
+[Make sure that you have the latest of the ongoing project. **The notes for this week refer extensively to this project**](https://github.com/joeappleton18/web-dev-2020-notes.git).
 
 :::
 
 
 
-:::warning
+:::warning Reading
 
 ### Essential Reading :closed_book:
 

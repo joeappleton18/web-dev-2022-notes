@@ -1,5 +1,10 @@
 # State Management and React Routing
 
+<iframe src="https://solent.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7fd1a922-0eee-4327-b817-ac67014220d4&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
+
+>> Full Solution Walk Through 
+
 :::warning Dependencies
 
 
@@ -21,6 +26,8 @@ This practical assumes you are up-to-date with the homework from last week.
 [React State Hooks](https://reactjs.org/docs/hooks-overview.html#state-hook)
 [Component Communication](https://www.pluralsight.com/guides/react-communicating-between-components)
 
+:::
+
 :::tip
 
 This week we are moving away from styling and looking into the idea of state and state management. We will be addressing the question:
@@ -40,7 +47,6 @@ Handling events in React is very similar to using vanilla JavaScript. According 
 > - With JSX you pass a function as the event handler, rather than a string
 
 ```JavaScript
-
 import React from "react";
 
 export default function App() {
@@ -345,8 +351,12 @@ import {
 
 - Also, import all of your views into your App component.
 
-
-
+```JavaScript
+import Dash from "./Views/Dash";
+import Checkin from "./Views/Checkin";
+import Join from "./Views/Join";
+import Profile from "./Views/Profile";
+```
 
 - We can now add routes as follows:
 
