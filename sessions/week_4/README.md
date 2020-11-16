@@ -28,7 +28,6 @@ This practical assumes you are up-to-date with the homework from last week.
 
 :::
 
-:::tip
 
 This week we are moving away from styling and looking into the idea of state and state management. We will be addressing the question:
 

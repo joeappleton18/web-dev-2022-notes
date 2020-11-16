@@ -26,10 +26,10 @@ This week is going to be particularly interesting.  We are looking into the miss
 
 [Firebase](https://firebase.google.com/docs) is a cloud infrastructure service that was acquired by Google in 2015 - it effectively is a sub-product suite of the [cloud platform](https://cloud.google.com/). At the time of writing, firebase offers a range of web-enabled services, the most popular being:
 
-Authentication  
-The Cloud Firestore Database   
-Cloud Functions  
-Hosting  
+- Authentication  
+- The Cloud Firestore Database   
+- Cloud Functions  
+- Hosting  
 
 Firebase, and other infrastructure as a service platform, delegate the need to manage infrastructure away from the developer. This is particularly appealing if you are working in a small team, or, as a solo developer. What's more, for our use, it has a very generous free tier.
 
@@ -49,13 +49,13 @@ The purpose of this task is simply to set up a firebase account, create a projec
 
 3) Within your project, register a new web application, register a new web application, also name it what you like
 
-1) Finally, within our weekly web project, install the firebase library by running:  `npm install firebase`
+4) Finally, within our weekly web project, install the firebase library by running:  `npm install firebase`
 
 :::
 
 ## Setting Up Third Party Services in React
 
-Remember, React is just a light layer of UI functionality sprinkled on top of JavaScript. As such, we can structure our apps in the way we want - this is both a blessing and a curse. While we have free range on our app's architecture, things can get messy - very quickly.  This is why we need to be strict on enforcing conventions (e.g. component names must have  uppercase first letter) it keeps things sane as our app grows. With this in mind, I like to create, what I refer to services to handle interactions with third-party apis/services such as firebase.
+Remember, React is just a light layer of UI functionality sprinkled on top of JavaScript. As such, we can structure our apps in the way we want - this is both a blessing and a curse. While we have free range on our app's architecture, things can get messy - very quickly.  This is why we need to be strict on enforcing conventions (e.g. component names must have  uppercase first letter). It keeps things sane as our app grows. With this in mind, I like to create, what I refer to as services to handle interactions with third-party apis/services such as firebase.
 
 ###  Setting Up a Firebase Service   
 
@@ -64,6 +64,7 @@ Before we can set up our firebase service we need to export a configuration obje
 :::tip
 
 ## Task 2 - Setting Up a Firebase Config File
+
 - Create the file `src/config/firebase.js`
 
   ![fig_2](./assets/fig_2.png)
@@ -169,7 +170,7 @@ function Protected({ authenticated, children, ...rest }) {
 }
 ```
 
-
+- After pasting in the above code you will need to make sure that you import the redirect component at the top of App.js - `import { Switch, Route, useLocation, Redirect } from "react-router-dom";`
 
 The above component is similar to our `src/Tile.js` component, in that it wraps around some child component. However, it has a bit more logic, can you see how it is checking if authenticated is true? If this is the case the wrapped component is rendered, if not, we redirect to login. The router uses render props to achieve this, like hooks, render props are used to share logic. Once the above component is set up we can wrap it around our protected routes:
 
@@ -401,6 +402,27 @@ We can use this in our `useAuth` hook as follows:
   });
 ```
 
+We have a slight issue! Notice when you visit dash, your application at this stage will be authenticating however we still get redirected to the login page when we try and visit our root url. This is because our redirect fires before our application authenticates. In order to fix this we need  a `useEffect` hook that listens to our `isAuthenticated` state and redirects the user to the dash when it changes to true. We can achieve this through adding the following function to our `App.js` - `App()` function:
+
+```javaScript
+import { Switch, Route, useLocation, Redirect, useHistory } from "react-router-dom";
+
+function App() {
+const history = useHistory();
+ ...
+ 
+ useEffect(() => {
+    if (isAuthenticated) {
+      history.push('/');
+      return;
+    }
+    return;
+  }, [isAuthenticated])
+
+ ...
+
+}
+```  
 
 
 ::: tip 
@@ -411,13 +433,12 @@ Follow the above steps to allow users to sign up and login to your application
 
 :::
 
-## Home Study
-
+## Further Study
 ::: tip 
 
 ## Task 6 - Increasing the functionality
 
-- Can you work out how to add the signed in user details to a user state in useState. Next, share this around the application so the user name and an avatar or placeholder avatar (if there is not one) appear in the header.
+- Can you work out how to add the signed in user details to a user state in our useAuthHook. Next, share this around the application so the user name and an avatar or placeholder avatar (if there is not one) appear in the header.
 
 - Can you use use [react notifications](https://www.npmjs.com/package/react-notifications) to provide better user feedback (inform them when they have logged in or out)
 - Can you, in a similar way we did for protected routes, redirect the user to dash if they are logged in and navigate to the join or login page
@@ -426,21 +447,12 @@ Follow the above steps to allow users to sign up and login to your application
 
 ::: tip 
 
-## Task 7 - Increasing the functionality
-
-- Can you work out how to add the signed in user details to a user state in useState. Next, share this around the application so the user name and an avatar or placeholder avatar (if there is not one) appear in the header.
-
-- Can you use use [react notifications](https://www.npmjs.com/package/react-notifications) to provide better user feedback (inform them when they have logged in or out)
-
-:::
-
-
 
 ::: tip 
 
 ## Task 8 - Add social sign in
 
-- Set up social sign in methods (Facebook, Twitter and Gmail)
+- Set up social sign in methods (Facebook and Gmail)
 
 :::
 

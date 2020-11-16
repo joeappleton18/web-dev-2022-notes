@@ -1,5 +1,9 @@
 # Forms,Validation and Conditional Rendering
 
+## Solution Video 
+
+<iframe src="https://solent.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=6e7421fb-b201-4485-a059-ac700165fd80&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 
 :::warning Dependencies 
 
@@ -8,6 +12,19 @@
 [Make sure that you have the latest of the ongoing project. **The notes for this week refer extensively to this project**](https://github.com/joeappleton18/web-dev-2020-notes.git).
 
 :::
+
+
+This week concludes our react learning! In the following weeks, we are going to be moving on to looking at validation and data persistence using Firebase.  
+
+Our weekly learning focus will involve answering the following question:
+
+
+** How can I gather and validate user data, through accessible forms? **
+
+We can further break this question down int the following concerns:
+
+- How can I provide dynamic user feedback with regards to the validity of our form data?
+- What programming patterns can I use to integrate form into my React applications?
 
 
 
@@ -28,22 +45,22 @@
 
 Optional advanced reading:
 
-[Logical Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
+[JavaScript Logical Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
 
 :::
 
 ## Conditional Rendering 
 
-Often you will want to hide or show elements based on some given state (e.g.displaying errors on a form). In other words, you will want to conditionally render some part of the UI.
+Often you will want to hide or show elements based on some given state (e.g. displaying errors on a form). In other words, you will want to **conditionally** render some part of the UI.
 
-"Conditional rendering in React works the same way conditions work in JavaScript -  as such, there is a very shallow learning curve. 
+"Conditional rendering in React works the same way conditions work in JavaScript" -  as such, there is a very shallow learning curve. 
 
-JavaScript facilitates multiple approaches to conditions. The method you use is very much down to your preference as a developer or your given projects style guide.  Let's explore some of the most common methods:
+JavaScript facilitates multiple approaches to conditions. The method you use is very much down to your preference as a developer or your given project's style guide.  Let's explore some of the most common methods:
 
 
 ### If/Else
 
-I very rarely use if/else on the UI - it is just too verbose. However, on the positive side, it is very easy to rationalise about. 
+I very rarely use if/else on the UI - it is just too verbose. However, on the positive side, it is very easy to understand. 
 
 ```JavaScript 
 {if (isLoggedIn) {
@@ -64,7 +81,7 @@ If I need to conditionally render 1 of 2 very small sections of UI I will normal
 
 You can think of a turnery operator as a short-hand if/else.  
 
-**If**, `isLoggedIn` is true then the expression immediately after the `?` is executed. **Else**, if `isLoggedIn` is false then the expression after the `:` will instead run. 
+**If**, `isLoggedIn` is true, the expression immediately after the `?` is executed. **Else**, if `isLoggedIn` is false, the expression after the `:` will instead run. 
 
 
 ### The logical && operator (my go to solution)
@@ -123,7 +140,7 @@ Navigate to `http://localhost:3000/join` - it is incomplete. As such I want you 
  
 - As a user, the Email button should be hidden after I click it, as it is no longer needed.
 
-Use what you have just learnt about conditional rendering and also what we covered with regards to [event handling](https://web-dev-industry-2020.web.app/sessions/week_4/#handling-events) to implement the above user stories.  You will only need to update the single file - `/src/Components/LoginForm.js`
+Use what you have just learnt about conditional rendering and also what we covered with regards to [event handling](https://joeappleton18.github.io/web-dev-2020-notes/sessions/week_4/#handling-events) to implement the above user stories.  You will only need to update the single file - `/src/Components/LoginForm.js`
 
 
 :::
@@ -194,17 +211,14 @@ Let's unpack the above example.
 
 ## Task 2 -  Validate the Join Form
 
-
-
 - Install RHF,  `npm install react-hook-form` ([RHF form validation](https://react-hook-form.com/get-started#Applyvalidation))
 - Add validation to `components/LoginForm.js`  - currently being used in `src/Views/Join.js`
 - Display an error label below each invalid input. You should style this error appropriately (e.g. red).
-  
 - You should ensure that the password is some minimum length and the email is valid. Both password and email are, of course, required.
 
 :::
 
-## Advanced Validation 
+## Better Form Validation Validation 
 
 [While RHF has built in validation functionalities](https://react-hook-form.com/get-started#Applyvalidation), as our forms grow in complexity, we may want a slightly more sophisticated way to construct validation rules. This is where a data schema that represents our form data can be useful. We will use a tool called [yup](https://github.com/jquense/yup) to build our schema.
 
@@ -212,10 +226,14 @@ Let's unpack the above example.
 
 Yup is a JavaScript schema builder for value parsing and validation. Let's consider how we might use it with RHF.
 
+
+*** yup validation schema updated ***
+
 ```JavaScript
 
 import React, { useState } from "react";
 import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
 
@@ -229,7 +247,7 @@ function MailingList() {
   });
 
 
-  const { register, handleSubmit,  errors } = useForm({ validationSchema:mailingListSchema});
+  const { register, handleSubmit,  errors } = useForm({  resolver: yupResolver(schema),});
   const onSubmit = data => { console.log(data) }
 
   return (
@@ -257,11 +275,12 @@ In the above example we use yup, not only to define our schema, but also to cons
 ## Task 3 - Schema Validation
 
 - Install yup  - `npm install yup`
+- Install the resolver - `npm install @hookform/resolvers`
 - Add a validation schema and custom messages to `components/LoginForm.js`  - currently being used in `src/Views/Join.js`
 
 :::
 
-# Home Study 
+# Further Study 
 
 
 :::tip
@@ -278,16 +297,17 @@ In the above example we use yup, not only to define our schema, but also to cons
 
 >> This task really pulls together everything we have covered so far.
 
-- Currently the form itself is is nested within a view - `src/Views/Checkin.js`. However, this is not in accordance to the principle that a form should be  "A black box that takes in user input, validates it and outputs this valid data for processing.". To achieve this, extract the checkin form to its own component and add validation.
+- Currently the form itself is is nested within a view - `src/Views/Checkin.js`. However, it is not in accordance to the principle that a form should be  "A black box that takes in user input, validates it and outputs this valid data for processing.". To achieve this, extract the checkin form to its own component and add validation.
 
 - Complete the remaining Checkin form functionality. I shall express this functionality as user stories:
 
-  - As a user, I should be, optionally, displayed the food and drink inputs if I select no for "WAS YOUR DIET PERFECT?", so I can deduct points
+- As a user, I should be, optionally, displayed the food and drink inputs if I select no for "WAS YOUR DIET PERFECT?", so I can deduct points
 
-  - As a user, I should see the char count tick downwards as I write my comment, so I know how many chars I have left
+- As a user, I should see the char count tick downwards as I write my comment, so I know how many chars I have left
 
-  - As a user I should see my score go up or down based on what I select, so I know my points before I checkin. 
-    - **Note**: the number of points available (max 20) is appended to each label. Often they are binary, e.g. drinking water is 3 or 0. However, diet, worth 10 points, is a sliding scale. Users will deduct a point, up to a maximum of 10 based on their infringements.  Consider how you would use `useEffect` or, perhaps easier, [react-hook-form-watch](https://react-hook-form.com/api#watch) to achieve this task
+- As a user, I should see my score go up or down based on what I select, so I know my points before I checkin. 
+
+- **Note**: the number of points available (max 20) is appended to each label. Often they are binary, e.g. drinking water is 3 or 0. However, diet, worth 10 points, is a sliding scale. Users will deduct a point, up to a maximum of 10 based on their infringements.  Consider how you would use `useEffect` or, perhaps easier, [react-hook-form-watch](https://react-hook-form.com/api#watch) to achieve this task
 
 :::
 

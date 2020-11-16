@@ -26,8 +26,7 @@
 
 Optional advanced reading:
 
-
-[An in-depth guide to the use effect hook. A fantastic blog post by  Dan Abramov - a react core team member.s](https://overreacted.io/a-complete-guide-to-useeffect/)(optional)
+[An in-depth guide to the use effect hook. A fantastic blog post by  Dan Abramov - a react core team member.](https://overreacted.io/a-complete-guide-to-useeffect/)(optional)
 
 :::
 
