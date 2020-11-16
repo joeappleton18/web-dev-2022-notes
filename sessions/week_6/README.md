@@ -215,7 +215,32 @@ Let's unpack the above example.
 - Add validation to `components/LoginForm.js`  - currently being used in `src/Views/Join.js`
 - Display an error label below each invalid input. You should style this error appropriately (e.g. red).
 - You should ensure that the password is some minimum length and the email is valid. Both password and email are, of course, required.
+- **Note,** that our form inputs are nested in a styled component - `StyledInputArea`. It turns out that RHF acts a little odd if it's operating inside a styled component. To fix this issue, remove StyledInput area, and add the following to `config/globalStyles.js`:
 
+```JavaScript
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    height: 44px;
+    border: 1px solid ${({ theme }) => theme.colors.darkShade[10]};
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-bottom: 2%;
+    font-size: 22px;
+}
+textarea {
+    border: 1px solid ${({ theme }) => theme.colors.darkShade[10]};
+    border-radius: 4px;
+}
+label {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 15px;
+    text-transform: uppercase;
+    margin-bottom: 20
+    color: #1F2041;
+}
+`
+```
 :::
 
 ## Better Form Validation Validation 
