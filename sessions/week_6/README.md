@@ -320,7 +320,9 @@ In the above example we use yup, not only to define our schema, but also to cons
 
 ## Task 5 - Refactor and Complete the Checkin Form 
 
->> This task really pulls together everything we have covered so far.
+<iframe src="https://solent.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=b006e6d8-b905-41ba-aa7d-ac7500bed290&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
+>> This task really pulls together everything we have covered so far. I've made a quick video to look at the functionality of the checkin form . 
 
 - Currently the form itself is is nested within a view - `src/Views/Checkin.js`. However, it is not in accordance to the principle that a form should be  "A black box that takes in user input, validates it and outputs this valid data for processing.". To achieve this, extract the checkin form to its own component and add validation.
 
