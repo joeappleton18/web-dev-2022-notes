@@ -42,11 +42,11 @@ module.exports = {
         collapsable: true,
         children: ["/sessions/week_6/"],
       },
-      /* {
-         title: "Week 8 and 9 -  Firebase Authentication and Custom Hooks",
+       {
+         title: "Week 8 -  Firebase Authentication and Custom Hooks",
          collapsable: true,
          children: ["/sessions/week_8/"],
-       },*/
+       },
     ],
   },
 };

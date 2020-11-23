@@ -1,12 +1,19 @@
 
 # Week 8 - Firebase Authentication and  Custom Hooks
 
+This week, for me, is the most exciting session to deliver. I going to be introducing you to the wonderful, time and cost saving world, of serverless systems. In doing so, we are going to be using a authentication service offered by Firebase . This will allow users to sign up and log into our application. Crucially, we will now be able to lock sections of our application down.
+
+This week, I encourage you to follow through the video which will guid in the process of connecting react up to third party serverless providers.  **It's long**, and I don't expect you to complete this video in one sitting. Ensure you use the notes to support you, when you are watching the video.
+
+
+<iframe src="https://solent.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bf80fe40-5746-4bd9-8abc-ac7a00d594c0&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 
 :::warning 
 
 ## Session Dependencies 
 
-[Make sure that you have the latest of the ongoing class, fitness tracker, project. **The notes for this week refer extensively to this project**](http://github.com/joeappleton18/web-dev-industry-practical).
+[Make sure that you have the latest of the ongoing class, fitness tracker, project. **The notes for this week refer extensively to this project**](http://github.com/joeappleton18/contemp-web-app-solutions.git).
 
 :::
 
@@ -19,8 +26,6 @@
 [Firebase Authentication](https://firebase.google.com/docs/auth/web/start)
 
 :::
-
-This week is going to be particularly interesting.  We are looking into the missing layer of our application stack - persistence.   To achieve this, we are going to be using Firebase.  
 
 ## Firebase 
 
@@ -99,7 +104,6 @@ You have already seen and used Hooks; according to the React documentation:
 React Hooks such as useSate and useEffect allow us to share logic between components without the need to write a class. Along this line of thinking, creating our own custom hooks can allow us to share logic that we have created - perfect for capturing third party service communication. 
 
 :::tip 
-
 ## Task 3 	
 
 According to React:
@@ -224,7 +228,9 @@ Using the techniques above, initiate firebase in your application
 
 ## Sign up new users
 
-Ok, so we are now ready to authenticate users. The first thing we need to do is enable an authentication method within our firebase project. Simply click authentication in the righthand side menu, and, for now, enable email authentication. That's it, we are now ready to authenticate and register users to our application.  
+Ok, so we are now ready to authenticate users. The first thing we need to do is enable an authentication method within our firebase project. First, simply click authentication in the righthand side menu, and, for now, enable email authentication. That's it, we are now ready to authenticate and register users to our application.  Next, enable google authentication. Finally, follow the video below to enable facebook authentication:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9ztk1hKmcI0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Recall that we have initiated firebase within our app component. Once initiated, the`firebase` object will contain all of our authentication methods. These methods are returned by running an `auth()` method. For instance, we can do this:
 
@@ -235,7 +241,7 @@ firebase.auth().createUserWithEmailAndPassword('joe.appleton@solent.ac.uk', 'pas
 We want to abstract this method to our useAuth hook. To do this we need to pass `firebase.auth()` into our useAuth hook. This means that the useAuth function call in our `src/App.js` component will look like this:
 
 ```javascript
-const { isAuthenticated} = useAuth(firebase.auth());
+const { isAuthenticated} = useAuth(firebase.auth);
 ```
 
 I can now abstract the email login functionality into useAuth, my `src/services/firebase/useAuth.js` hook looks like this:
@@ -246,7 +252,7 @@ import { useState} from "react";
 
 function useAuth(fbAuth) {
    const [isAuthenticated, setIsAuthenticated] = useState(false);
-   const createEmailUser = (email, password) => fbAuth.createUserWithEmailAndPassword(email, password);
+   const createEmailUser = (email, password) => fbAuth().createUserWithEmailAndPassword(email, password);
    return {isAuthenticated, createEmailUser};
 }
 
@@ -256,7 +262,7 @@ export default useAuth
 We can get a reference to `createEmailUser` within our `src/App.js` component as follows:
 
 ```javascript
-const { isAuthenticated, createEmailUser} = useAuth(firebase.auth());
+const { isAuthenticated, createEmailUser} = useAuth(firebase.auth);
 ```
 
 Within `src/App.js`  let's pass `createEmailUser` down  to our  `JoinPage`:
@@ -266,9 +272,6 @@ Within `src/App.js`  let's pass `createEmailUser` down  to our  `JoinPage`:
       <Join createEmailUser={createEmailUser}/>
  </Route>
 ```
-
-
-
 We can now use  createEmailUser within our `src/Components/Join.js` component as follows:
 
 ```javascript
@@ -308,7 +311,7 @@ export default Join;
 
 
 
-**Note: **  you'll need to update our form component so it can process the new props we are passing in (serverErrorMessage - will get displayed below the form, onEmailSubmit will get called with the form data )`. Moreover, notice how I am using a async function (handleEmailSubmit). 
+**Note: **  you'll need to update our form component so it can process the new props we are passing in (serverErrorMessage - will get displayed below the form, onEmailSubmit will get called with the form data is submitted)`. Moreover, notice how I am using a async function (handleEmailSubmit). 
 
 ## [Sign in existing users](https://firebase.google.com/docs/auth/web/start#sign_in_existing_users)
 
@@ -322,7 +325,7 @@ Let's abstract this functionality to our  `src/services/firebase/useAuth.js` hoo
 
 ```javascript
 ...
-const signInEmailUser  = (email, password) => fbAuth.signInWithEmailAndPassword(email, password);
+const signInEmailUser  = (email, password) => fbAuth().signInWithEmailAndPassword(email, password);
 return {isAuthenticated, createEmailUser, signInEmailUser };
 ...
 ```
@@ -391,7 +394,7 @@ firebase.auth().onAuthStateChanged(user => {
 We can use this in our `useAuth` hook as follows:
 
 ```javascript
- fbAuth.onAuthStateChanged(user => {
+ fbAuth().onAuthStateChanged(user => {
     if (user) {
       console.log(user);
       setIsAuthenticated(true);
