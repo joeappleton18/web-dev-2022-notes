@@ -1,9 +1,12 @@
 
 # Week 8 - Firebase Authentication and  Custom Hooks
 
-This week, for me, is the most exciting session to deliver. I going to be introducing you to the wonderful, time and cost saving world, of serverless systems. In doing so, we are going to be using a authentication service offered by Firebase . This will allow users to sign up and log into our application. Crucially, we will now be able to lock sections of our application down.
+This week, for me, is the most exciting session to deliver. I going to be introducing you to the wonderful, time and cost saving world, of serverless systems. In doing so, we are going to be using a authentication service offered by Firebase . This will allow users to sign up and log into our application. Crucially, we will now be able to lock sections of our application down. We'll be answering the following question:
 
-This week, I encourage you to follow through the video which will guid in the process of connecting react up to third party serverless providers.  **It's long**, and I don't expect you to complete this video in one sitting. Ensure you use the notes to support you, when you are watching the video.
+**How can I authenticate my react applications allowing users to sign in using a range of different methods (facebook, email, gmail)?**
+
+
+This week, **I encourage you to follow through the video which will guid in the process of connecting react up to third party serverless providers**.  **It's long**, and I don't expect you to complete this video in one sitting. Ensure you use the notes to support you, when you are watching the video.
 
 
 <iframe src="https://solent.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bf80fe40-5746-4bd9-8abc-ac7a00d594c0&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
@@ -438,6 +441,8 @@ Follow the above steps to allow users to sign up and login to your application
 
 ## Further Study
 ::: tip 
+
+** The video for this week covers these tasks! **
 
 ## Task 6 - Increasing the functionality
 
