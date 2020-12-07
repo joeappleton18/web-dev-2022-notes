@@ -1,4 +1,4 @@
-# Week 10 -  Hosting And Rules
+# Week 10 -   Hosting, Rules and Cloud Functions
 
 Welcome to week 10, our final week of formal delivery. This week we are going to consider the following:
 

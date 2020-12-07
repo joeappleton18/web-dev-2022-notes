@@ -54,7 +54,7 @@ module.exports = {
         children: ["/sessions/week_9/"],
       },
       {
-        title: "Week 10 -  Hosting and Functions",
+        title: "Week 10 -  Hosting, Rules and Cloud Functions",
         collapsable: true,
         children: ["/sessions/week_10/"],
       },
