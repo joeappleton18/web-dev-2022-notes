@@ -5,7 +5,7 @@
 ## Session Dependencies
 
 
-[Make sure that you have the latest of the ongoing class, fitness tracker, project. **The notes for this week refer extensively to this project**](http://github.com/joeappleton18/web-dev-industry-practical). 
+[Make sure that you have the latest of the ongoing class, fitness tracker, project. **The notes for this week refer extensively to this project**](https://github.com/joeappleton18/contemp-web-app-solutions.git). 
 
 :::
 

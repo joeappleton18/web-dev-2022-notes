@@ -21,7 +21,7 @@ This week's, and future, setups are a little more involved. You will need to ens
 - [The cloud firestore overview](https://firebase.google.com/docs/firestore)
 - [The cloud firestore data model](https://firebase.google.com/docs/firestore/data-model)
 :::
-### Video Walk Through
+
 
 
 ### Optional Reading :closed_book:

@@ -53,6 +53,11 @@ module.exports = {
         collapsable: true,
         children: ["/sessions/week_9/"],
       },
+      {
+        title: "Week 10 -  Hosting and Functions",
+        collapsable: true,
+        children: ["/sessions/week_10/"],
+      },
     ],
   },
 };

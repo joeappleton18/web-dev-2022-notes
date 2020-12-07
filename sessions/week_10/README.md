@@ -1,6 +1,10 @@
 # Week 10 -  Hosting And Rules
 
-#### How can I persist data?  
+Welcome to week 10, our final week of formal delivery. This week we are going to consider the following:
+
+- How can I host my application?
+- How can I secure my database?
+- How can I use Firebase Functions to compliment my database (optional, you'll need to upgrade your firebase project to the spark plan if you want to complete this section)
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/emrB3Qimg28" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -9,7 +13,7 @@
 
 ## Session Dependencies 
 
-[Make sure that you have the latest of the ongoing class, fitness tracker, project. **The notes for this week refer extensively to this project**](http://github.com/joeappleton18/web-dev-industry-practical).
+[Make sure that you have the latest of the ongoing class, fitness tracker, project. **The notes for this week refer extensively to this project**](https://github.com/joeappleton18/contemp-web-app-solutions.git).
 
 This week's, and future, setups are a little more involved. You will need to ensure that you add your own firebase credentials.  The `README.md` file on my version of the fitness tracker walks you through how to do this. 
 
@@ -67,7 +71,6 @@ After this command has run you should see a 'build' folder containing your produ
 - That's it! If all has worked, your application should have been deployed to its own custom URL. You may want to add the hosting deployment command, and further commands you use, to your scripts object in your `package.json` file. 
 
 :::
-
 
 ## Securing your Firebase Database
 
@@ -199,7 +202,7 @@ Use the techniques coved above to secure your database.
 :::
 
 
-## Cloud Functions
+## Cloud Functions (Optional)
 
 Currently, our entire code base runs within our users' browser and most of the time this works well for us. However, there will be occasions where you need to perform tasks that are either too costly or insecure to run in a web browser. Normally, we would run such tasks on our server, but Firebase is serverless and we don't have access to a server. This is where cloud functions can help, according to the documentation they, "let you automatically run backend code in response to events triggered by Firebase features and HTTPS requests.". 
 
