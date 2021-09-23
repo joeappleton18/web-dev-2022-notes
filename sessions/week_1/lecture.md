@@ -1,4 +1,4 @@
-# Lecture
+# Lecture (Start Here)
 
 Most weeks I will be setting some on-demand videos that you should try and watch before your practical.
 
