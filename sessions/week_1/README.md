@@ -1,4 +1,4 @@
-# Practical Session
+# Practical Session and Guided Learning
 
 By the end of this week you should be able to answer the following questions:
 
