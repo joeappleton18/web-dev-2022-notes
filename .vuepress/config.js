@@ -1,5 +1,5 @@
 module.exports = {
-  base: "/web-dev-2020-notes/",
+  base: "/web-dev-2021-notes/",
   dest: "docs",
   themeConfig: {
     displayAllHeaders: true,
