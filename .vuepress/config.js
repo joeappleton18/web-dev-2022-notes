@@ -22,7 +22,7 @@ module.exports = {
       {
         title: "Week 1 - The latest version of JavaScript",
         collapsable: true,
-        children: ["/sessions/week_1/"],
+        children: ["/sessions/week_1/lecture", "/sessions/week_1/"],
       },
       // {
       //   title: "Week 2 - Introducing React",

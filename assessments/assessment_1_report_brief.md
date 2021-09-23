@@ -33,7 +33,7 @@ In using the design thinking (DT) methodology as a lens (see Figure 1), this ass
 
 ## Deliverables
 
-You are required to deliver a 2,500 word academic styled report that should include the section presented below.
+You are required to deliver a **2,500 word** academic styled report which includes a link to your mock-up. The report should include the section presented below.
 
 ## Report Structure
 
