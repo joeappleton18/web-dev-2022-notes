@@ -2,6 +2,8 @@
 
 Most weeks I will be setting some on-demand videos that you should try and watch before your practical.
 
+## Get started with teams
+
 While there will be no live teams sessions, we will be using it to host in-class discussion:
 
 ![](./assets/joining_a_team.png)
