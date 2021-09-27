@@ -2,6 +2,12 @@
 
 Most weeks I will be setting some on-demand videos that you should try and watch before your practical.
 
+While there will be no live teams sessions, we will be using it to host in-class discussion:
+
+![](./assets/joining_a_team.png)
+
+Open teams and select “Teams” from the sidebar. Next, click join or create a team and enter this join code (fik06r9). You are now a member of our module team.
+
 ## Introduction to Module
 
 First, you should ensure that you are aware of what the module is and what is required from you. Please take some time to watch the module introductory videos.
