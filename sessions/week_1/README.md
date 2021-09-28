@@ -28,7 +28,9 @@ In this session, we are focussing on vanilla JS; however, from next week onwards
 
 <iframe src="https://solent.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a6ae72f5-35a1-4843-9dec-ac460132246b&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
-In order to package our application we need to a build tool. [WebPack](https://webpack.js.org/) is currently the most popular tool.
+>> Why we need a build tool
+
+In order to package our application we need to a build tool, [WebPack](https://webpack.js.org/) is currently the most popular tool.****
 
 > > At its core, WebPack is a static module bundler for modern JavaScript applications. When WebPack processes your application, it internally builds a dependency graph which maps every module your project needs and generates one or more bundles. (WebPack, 2020)
 
@@ -44,11 +46,11 @@ To understand why we need a tool such as WebPack, we must first consider a moder
 
 Figure 1, represents the overarching practical project that we will be working on throughout these sessions. We are going to be creating this application on a **single page**. This type of application architecture is appropriately known as a single page application (SPA).
 
-Using an SPA approach, the browser loads a single page, along with, what's known as, a JavaScript bundle. There is no need for further page reloads as the `bundle.js` file contains nearly everything the browser will need for the given session.
+Using an SPA approach, the browser loads a single page, along with what's known as a JavaScript bundle. There is no need for further page reloads as the `bundle.js` file contains nearly everything the browser will need for the given session.
 
 This approach minimises HTTP requests and user wait time; however, the major drawback is search engines can not easily differentiate between pages in your application. This may not be a problem if the application is behind a login screen, as there is no need to appear in the search engines. If this is not the case, the solution is server-side rendering or pre-rendering, these are advanced topics that you should be aware of, but we will not cover them in your practical.
 
-It would not be practical for developers to construct or work on a bundle file. WebPack is the solution to this challenge, it allows us to bundle together multiple JavaScript files and assets.
+It would not be practical for developers to construct or work on a bundle file as it may bundle together many hundreds of dependencies. WebPack is the solution to this challenge, it allows us to bundle together multiple JavaScript files and assets.
 
 > > When webpack processes your application, it starts from a list of modules defined on the command line or in its config file. Starting from these entry points, webpack recursively builds a dependency graph that includes every module your application needs, then bundles all of those modules into a small number of bundles - often, just one - to be loaded by the browser. (webpack, 2020)
 
@@ -68,7 +70,7 @@ Let's explore the above ideas by starting this weeks practical - a todo list app
 
 ::::
 
-If you open up `index.html`, there is simply a placeholder div, `<div id="app"></div>` for our app. Such a set up is typical of a SPA, we have a single element that the entire application is injected into.
+If you open up `index.html` there is simply a placeholder div, `<div id="app"></div>` for our application. Such a set up is typical of a SPA, we have a single element that the entire application is injected into.
 
 ## ES6 modules
 
@@ -296,6 +298,6 @@ function render(todos) {
 
 ## TASK 7 :rocket:
 
-Complete the todo list so we can add new todos
+Complete the todo list so we can add new todos.  
 
 :::
