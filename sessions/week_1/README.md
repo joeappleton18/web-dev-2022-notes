@@ -60,7 +60,7 @@ Let's explore the above ideas by starting this weeks practical - a todo list app
 
 ## TASK 2 :rocket:
 
-- Clone the following repository `https://github.com/joeappleton18/todo-list-tuorial`
+- Clone the following repository `https://github.com/joeappleton18/todo-list-tutorial`
 - Open the resulting `todo-list-tutorial` in VS code
 - Install the dependencies, `npm install`
 - Open `package.json` and work out how to run the defined scripts to:
