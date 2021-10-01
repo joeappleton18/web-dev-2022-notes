@@ -2,7 +2,9 @@
 
 By the end of this week you should be able to address the following questions:
 
-- What is React?- What are React components?
+- What is React?
+  
+- What are React components?
 
 - What are props?
 
@@ -75,7 +77,7 @@ function Welcome(props) {
 }
 ```
 
-You can also use a ES6 class to define a component:
+You can also use a ES6 class to define a component, but this is quite dated now:
 
 ```js
 class Welcome extends React.Component {
@@ -89,7 +91,7 @@ Both of the techniques above create equivalent components. Historically, class c
 
 ## JSX
 
-Some of you may have already noticed that something odd is going on with regards to our JavaScript. For instance, `return <h1>Hello, {this.props.name}</h1>;` is not valid JavaScript, it is known as JSX.
+Some of you may have already noticed that something odd is going on with regards to our JavaScript. For instance, `return <h1>Hello, {props.name}</h1>;` is not valid JavaScript, it is known as JSX.
 
 JSX is a syntax extension to JavaScript and allows you to combine the full power of JavaScript to construct views. Let's consider a more complete example in updating our `src/App` function:
 
