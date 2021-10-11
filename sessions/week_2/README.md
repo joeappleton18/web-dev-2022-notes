@@ -3,7 +3,7 @@
 By the end of this week you should be able to address the following questions:
 
 - What is React?
-  
+
 - What are React components?
 
 - What are props?
@@ -288,7 +288,7 @@ Can you work out how to style the days completed text?
 
 :::tip
 
-## Task 6 Optional - Have a go at finishing of the component :rocket:
+## Task 6 Optional - Have a go at finishing off the component :rocket:
 
 **Tip:** You should look to compose your component using multiple sub components
 

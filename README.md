@@ -28,16 +28,17 @@ There are two assessments that will allow me to gauge how well you have done.
 
 ## Weekly Topics
 
-|         |                                              |
-| ------- | -------------------------------------------- |
-| Week    | Topic                                        |
-| 1       | The latest version of JavaScript             |
-| 2 .     | Introduction to React                        |
-| 3 and 4 | Styling Components and Further React Basics  |
-| 6 .     | Assessment Support                           |
-| 7 .     | Forms, Validation, and Conditional Rendering |
-| 8 .     | Firebase Authentication and Custom Hooks     |
-| 9 .     | Managing Data Using Firebase                 |
-| 10 .    | Hosting, Security Rules and Cloud Functions  |
-| 11 .    | Assessment Support                           |
-| 12 .    | Assessment Support                           |
+|      |                                              |
+| ---- | -------------------------------------------- |
+| Week | Topic                                        |
+| 1    | The latest version of JavaScript             |
+| 2 .  | Introduction to React                        |
+| 4    | Further React Basics                         |
+| 5 .  | Styling the Look and Feel                    |
+| 6 .  | Assessment Support                           |
+| 7 .  | Forms, Validation, and Conditional Rendering |
+| 8 .  | Firebase Authentication and Custom Hooks     |
+| 9 .  | Managing Data Using Firebase                 |
+| 10 . | Hosting, Security Rules and Cloud Functions  |
+| 11 . | Assessment Support                           |
+| 12 . | Assessment Support                           |
