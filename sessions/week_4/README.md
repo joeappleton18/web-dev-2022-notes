@@ -1,6 +1,20 @@
 ## Styling Our Application
 
-Recall the core question for this week: **"How can we ensure a consistent look and feel across our applications?"**
+::: tip Session Dependencies
+
+**Prior to starting the session you should clone the latest version of the ongoing project:**
+
+`git clone -b week-3-solutions https://github.com/joeappleton18/running-contemp-web-app-solutions.git`
+
+- Open the project in VS code, `code running-contemp-web-app-solutions`
+- Install the dependencies, `npm install`
+- You can then start the application, `npm run start`
+
+From this week forward, we are incrementally going to be working on our goal tracking application. [You can view the mockup here](https://www.figma.com/file/rTbqRpRWOw7UYg28SBcxQv/web-dev-pratical-task-made-using-toxin-ui?node-id=31262%3A3).
+
+:::
+
+The core question for this week: **"How can we ensure a consistent look and feel across our applications?"**
 
 There are, of course, several ways to address the above question. To start with, a simple style guide can go a long way in presenting a solution.
 
@@ -43,7 +57,7 @@ While, as mentioned above, there are many styling solutions. [https://styled-com
 
 :::tip
 
-## Task 3 - Understand the Why :rocket:
+## Task 1 - Understand the Why :rocket:
 
 I always like to know the philosophical position of any third-party library that I use. To access this, I consider what sort of problem they are trying to solve? Moreover, I ask myself the question; will my application, moving forward run into this problem?
 
@@ -57,7 +71,7 @@ Let's get going, the first thing we need to do is install the styled-components 
 
 :::tip Task 4
 
-## Task 1 - Installing styled-components :rocket:
+## Task 2 - Installing styled-components :rocket:
 
 From command line use npm to install the following dependencies:
 
@@ -167,7 +181,7 @@ Let's try and break this down. `styled.h2` is in-fact a function provided by `st
 
 :::tip Task 5
 
-## Task 5 - Styling our application :rocket:
+## Task 3 - Styling our application :rocket:
 
 - Style the days complete component using styled components
 
@@ -210,7 +224,7 @@ Let's add some global styles to our application.
 
 ::: tip Task 6
 
-## Task 6 - Creating Global Styles
+## Task 4 - Creating Global Styles
 
 First, we need to consider where our global styles should live. There are no strict opinions on how we should structure our react applications. It is very much down to you as a developer.
 
@@ -287,7 +301,7 @@ One of the key features that really sold me on `styled-components` is it allows 
 
 :::tip
 
-## Task 7 - Themes :rocket:
+## Task 5 - Themes :rocket:
 
 Create `src/config/theme.js` and add the following code:
 
@@ -363,7 +377,7 @@ Above, you can see that our theme now gets injected into any function that we us
 
 :::tip Task 8
 
-## Task 8 - Expanding on our Theme :rocket:
+## Task 6 - Expanding on our Theme :rocket:
 
 Think about how we might expand on our theme so it better represents the style guide above. You can get as in-depth as you like here. For inspiration, you can consider this, huge, [theme object found in the material-ui library](https://material-ui.com/customization/default-theme/). Your theme will be a fraction of this size. However, you should always use inspiration.
 
@@ -380,3 +394,5 @@ Complete the `main_dash_view`:
 :::
 
 ---
+
+This is optional, so get as far as you can.
