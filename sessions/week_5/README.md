@@ -15,7 +15,7 @@ The term "design thinking" is not new, popularised by the title of a book writte
 
 ![](./design-thinking.jpeg)
 
-Design thinking is recipe; rather, it offers broad guidance on how to approach a problem in a way an experienced designer would. The guidance consists of 5 phases, and below I have framed this guidance in the context of developing an application to solve a problem.
+Design thinking is not recipe; rather, it offers broad guidance on how to approach a problem in a way an experienced designer would. The guidance consists of 5 phases, and below I have framed this guidance in the context of developing an application to solve a problem.
 
 - **Empathise**, Understand your potential users
 - **Define**, Through the inter-subjective experiences of your users define the problem

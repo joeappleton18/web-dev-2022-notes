@@ -46,11 +46,11 @@ module.exports = {
         children: ["/sessions/week_5/"],
       },
 
-      // {
-      //   title: "Week 5 - State And Routes",
-      //   collapsable: true,
-      //   children: ["/sessions/week_4/"],
-      // },
+      {
+        title: "Week 6 - State And Routes",
+        collapsable: true,
+        children: ["/sessions/week_6/lecture", "sessions/week_6/"],
+      },
       // {
       //   title: "Week 6 - Assessment Support",
       //   collapsable: true,
