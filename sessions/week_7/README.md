@@ -1,37 +1,25 @@
 # Forms,Validation and Conditional Rendering
 
-## Solution Video 
+:::warning session dependencies
 
-<iframe src="https://solent.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=6e7421fb-b201-4485-a059-ac700165fd80&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+## Session Dependencies
 
+[Make sure that you have the latest of the ongoing class, fitness tracker, project. **The notes for this week refer extensively to this project**](`git clone -b week-6-solutions https://github.com/joeappleton18/running-contemp-web-app-solutions.git`).
 
-:::warning Dependencies 
-
-## Session Dependencies 
-
-[Make sure that you have the latest of the ongoing project. **The notes for this week refer extensively to this project**](https://github.com/joeappleton18/contemp-web-app-solutions).
-
-:::
-
-
-This week concludes our react learning! In the following weeks, we are going to be moving on to looking at validation and data persistence using Firebase.  
+This week concludes our React learning! In the following week we are going to be moving on to looking at validation and data persistence using Firebase.
 
 Our weekly learning focus will involve answering the following question:
 
+**How can I gather and validate user data through accessible forms?**
 
-** How can I gather and validate user data, through accessible forms? **
-
-We can further break this question down int the following concerns:
+We can further break this question down into the following concerns:
 
 - How can I provide dynamic user feedback with regards to the validity of our form data?
 - What programming patterns can I use to integrate form into my React applications?
-
-
-
-:::warning Reading
+:::
+:::warning reading
 
 ### Essential Reading :closed_book:
-
 
 - [Conditional Rendering In React](https://reactjs.org/docs/conditional-rendering.html)
 
@@ -49,20 +37,19 @@ Optional advanced reading:
 
 :::
 
-## Conditional Rendering 
+## Conditional Rendering
 
 Often you will want to hide or show elements based on some given state (e.g. displaying errors on a form). In other words, you will want to **conditionally** render some part of the UI.
 
-"Conditional rendering in React works the same way conditions work in JavaScript" -  as such, there is a very shallow learning curve. 
+"Conditional rendering in React works the same way conditions work in JavaScript" - as such, there is a very shallow learning curve.
 
-JavaScript facilitates multiple approaches to conditions. The method you use is very much down to your preference as a developer or your given project's style guide.  Let's explore some of the most common methods:
-
+JavaScript facilitates multiple approaches to conditions. The method you use is very much down to your preference as a developer or your given project's style guide. Let's explore some of the most common methods:
 
 ### If/Else
 
-I very rarely use if/else on the UI - it is just too verbose. However, on the positive side, it is very easy to understand. 
+I very rarely use if/else on the UI - it is just too verbose. However, on the positive side, it is very easy to understand.
 
-```JavaScript 
+```JavaScript
 {if (isLoggedIn) {
       <LogoutButton onClick={handleLogoutClick} />;
     } else {
@@ -72,22 +59,20 @@ I very rarely use if/else on the UI - it is just too verbose. However, on the po
 ```
 
 ### The Turnery Operator
- 
-If I need to conditionally render 1 of 2 very small sections of UI I will normally use this approach. 
+
+If I need to conditionally render 1 of 2 very small sections of UI I will normally use this approach.
 
 ```JavaScript
   { isLoggedIn ?   <LogoutButton onClick={handleLogoutClick} /> : <LoginButton onClick ={handleLoginClick} /> }
 ```
 
-You can think of a turnery operator as a short-hand if/else.  
+You can think of a turnery operator as a short-hand if/else.
 
-**If**, `isLoggedIn` is true, the expression immediately after the `?` is executed. **Else**, if `isLoggedIn` is false, the expression after the `:` will instead run. 
-
+**If**, `isLoggedIn` is true, the expression immediately after the `?` is executed. **Else**, if `isLoggedIn` is false, the expression after the `:` will instead run.
 
 ### The logical && operator (my go to solution)
 
-Javascript has an interesting property summarised by Mozilla "the && and || operators actually return the value of one of the specified operands, so if these operators are used with non-Boolean values, they will return a non-Boolean value.".  The important statement in the previous quote is, "return the value of one of the specified operands",  we can use this idea to construct render conditions.
-
+Javascript has an interesting property summarised by Mozilla "the && and || operators actually return the value of one of the specified operands, so if these operators are used with non-Boolean values, they will return a non-Boolean value.". The important statement in the previous quote is, "return the value of one of the specified operands", we can use this idea to construct render conditions.
 
 ```JavaScript
 {
@@ -95,12 +80,12 @@ Javascript has an interesting property summarised by Mozilla "the && and || oper
 }
 
 {
-    !isLoggedIn && (<LogoutButton onClick={handleLogoutClick}/>); 
+    !isLoggedIn && (<LogoutButton onClick={handleLogoutClick}/>);
 }
 
 ```
 
-In the above example, for each && condition, either false will be returned if the first part of the condition is false.  Or, if the first part of the condition is true, then the value on the right of the && is returned, which is, in this case, a React component.  I really like this approach as, very much like the `if/else` example, it is very easy to rationalise about. Moreover, it lends itself to displaying larger blocks of UI: 
+In the above example, for each && condition, either false will be returned if the first part of the condition is false. Or, if the first part of the condition is true, then the value on the right of the && is returned, which is, in this case, a React component. I really like this approach as, very much like the `if/else` example, it is very easy to rationalise about and states how we want to update the UI in a declarative way. Moreover, it lends itself to displaying larger blocks of UI:
 
 ```JavaScript
 function Mailbox(props) {
@@ -112,7 +97,7 @@ function Mailbox(props) {
          <h2>
           You have {unreadMessages.length} unread messages.
         </h2>
-        <p> 
+        <p>
             You should go to your inbox ASAP - the message could be from Joe!
         </p>
       )}
@@ -127,30 +112,27 @@ function Mailbox(props) {
 }
 ```
 
-
 :::tip
 
-## Task 1 - Conditional Rendering 
+## Task 1 - Conditional Rendering
 
-Navigate to `http://localhost:3000/join` - it is incomplete. As such I want you to implement the following logic - which I shall express using user stories:
+Navigate to `http://localhost:<your port>/join` - it is incomplete. As such I want you to implement the following logic - which I shall express using user stories:
 
-- As a user, the join form should be hidden from me by default, so I am encouraged to join using social sign in. 
+- As a user, the join form should be hidden from me by default, so I am encouraged to join using social sign in.
 
-- As a user, I should be able to display the join form by clicking the Email button, so I can join using an email. 
- 
+- As a user, I should be able to display the join form by clicking the Email button, so I can join using an email.
+
 - As a user, the Email button should be hidden after I click it, as it is no longer needed.
 
-Use what you have just learnt about conditional rendering and also what we covered with regards to [event handling](https://joeappleton18.github.io/web-dev-2020-notes/sessions/week_4/#handling-events) to implement the above user stories.  You will only need to update the single file - `/src/Components/LoginForm.js`
-
+Use what you have just learnt about conditional rendering and also what we covered with regards to [event handling](/) to implement the above user stories.
 
 :::
 
-
 ## Forms
 
-Conceptually, I treat forms as the maintainers of valid user data. In strict accordance with the [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle), all they do is ensure that the data is valid and,  when the user submits the form, pass this valid data to some other component.  Using this approach,  you can think of a form as:
+Conceptually, I treat forms as the maintainers of valid user data. In strict accordance with the [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle), all they do is ensure that the data is valid and, when the user submits the form, pass this valid data to some other component. Using this approach, you can think of a form as:
 
->> A black box that takes in user input, validates it and outputs this valid data for processing.
+> > A black box that takes in user input, validates it and outputs this valid data for processing.
 
 ## Validating and handling form data
 
@@ -159,60 +141,59 @@ I like to use a library to handle form validation and processing concerns. There
 - [Formik](https://github.com/jaredpalmer/formik)
 - [Redux Form](https://redux-form.com/8.3.0/)
 
-However, recently, [React Hook Form (RHF)](https://react-hook-form.com/) has been released and is gaining a lot of traction. Compared to the former examples, I find this solution very elegant. This elegance is achieved through its heavy reliance, on the relatively new feature of react hooks. Therefore, given that we are writing modern react, it is an excellent candidate for our use. 
-
+However, recently, [React Hook Form (RHF)](https://react-hook-form.com/) has been released and is gaining a lot of traction. Compared to the former examples, I find this solution very elegant. This elegance is achieved through its heavy reliance, on the relatively new feature of react hooks. Therefore, given that we are writing modern react, it is an excellent candidate for our use.
 
 ### Validating and handling form data with RHF
 
 Let's consider an example:
 
-
 ```JavaScript
 import React, { useState } from "react";
 import { useForm } from 'react-hook-form'
 
-function MailingList() {
+import React from "react";
+import { useForm } from "react-hook-form";
 
-  const { register, handleSubmit,  errors } = useForm();
-  const onSubmit = data => { console.log(data) }
+function MailingList(props) {
+  const {register,formState: { errors },handleSubmit,} = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   return (
-
+    <div>
+      <h1>Join My Mailing List</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
-          
-          <label> Name </label>
-          <input type="text" name="name"   ref={register({ required: true, minLength: 6})} />
-          <p>{errors.name && 'Name is required' } </p>
-          <label> Email </label>
-          <input type="text" name="email"  ref={register({ required: true })} />
-          <p>{errors.email && 'Email is required' } </p>
-          <input type="submit" /> 
-      </form>);
+        <input {...register("name", { required: true })} />
+        <p>{errors.name?.type === "required" && "First name is required"}</p>
+        <input {...register("email", { required: true })} />
+        <p>{errors.email?.type === "required" && "Email is Required"}</p>
+        <input type="submit" />
+      </form>
+    </div>
+  );
 }
 
-export default  MailingList;
 
 ```
 
-Let's unpack the above example. 
+Let's unpack the above example.
 
-- We import the `useForm` hook, `import { useForm } from 'react-hook-form'`. `useForm`, in reality, is nothing more than a function. 
+- We import the `useForm` hook, `import { useForm } from 'react-hook-form'`. `useForm`, in reality, is nothing more than a function.
 
-- Within the body of our MailingList component, we call `useForm()`. useForm returns an object with a number of utility functions and values that we can use. Notice how we use object destructuring to accesses individual properties of the object that `useForm()` returns.  The complete line of code looks like this: `const { register, handleSubmit, watch, errors } = useForm();` - we can now use these constants to validate our form. 
+- Within the body of our MailingList component, we call `useForm()`. useForm returns an object with a number of utility functions and values that we can use. Notice how we use object destructuring to accesses individual properties of the object that `useForm()` returns. The complete line of code looks like this: `const {register,formState: { errors },handleSubmit,} = useForm();` - we can now use these constants to validate our form.
 
-- Consider our email input: `<input type="text" name="email"   ref={register({ required: true, min: 6})} />`.  It is a normal input with the addition of a ref prop. [Refs provide a way to access DOM nodes. In this case, we assign `register()` to our ref](https://reactjs.org/docs/refs-and-the-dom.html). Doing this gives RHF access to a given input - every input must be registered. 
-  
 - Note how we can pass validation rules into register. On submit, should the validation fail, an error message for each invalid field will be assigned to an errors constant - also provided by RHF.
 
-- Notice how we use the onSubmit provided by RHF  - `handleSubmit(onSubmit)` - this will only run when the form is valid. 
-
+- Notice how we use the onSubmit provided by RHF - `handleSubmit(onSubmit)` - this will only run when the form is valid.
 
 :::tip
 
-## Task 2 -  Validate the Join Form
+## Task 2 - Validate the Join Form
 
-- Install RHF,  `npm install react-hook-form` ([RHF form validation](https://react-hook-form.com/get-started#Applyvalidation))
-- Add validation to `components/LoginForm.js`  - currently being used in `src/Views/Join.js`
+- Install RHF, `npm install react-hook-form` ([RHF form validation](https://react-hook-form.com/get-started#Applyvalidation))
+- Add validation to `components/LoginForm.js` - currently being used in `src/Views/Join.js`
 - Display an error label below each invalid input. You should style this error appropriately (e.g. red).
 - You should ensure that the password is some minimum length and the email is valid. Both password and email are, of course, required.
 - **Note,** that our form inputs are nested in a styled component - `StyledInputArea`. It turns out that RHF acts a little odd if it's operating inside a styled component. To fix this issue, remove StyledInput area, and add the following to `config/globalStyles.js`:
@@ -241,9 +222,12 @@ label {
 }
 `
 ```
+
 :::
 
-## Better Form Validation Validation 
+Using the above, there is now no need to use a styled components for our form.
+
+## Better Form Validation Validation
 
 [While RHF has built in validation functionalities](https://react-hook-form.com/get-started#Applyvalidation), as our forms grow in complexity, we may want a slightly more sophisticated way to construct validation rules. This is where a data schema that represents our form data can be useful. We will use a tool called [yup](https://github.com/jquense/yup) to build our schema.
 
@@ -251,80 +235,86 @@ label {
 
 Yup is a JavaScript schema builder for value parsing and validation. Let's consider how we might use it with RHF.
 
+- First we need to install a few extra dependencies:
 
-*** yup validation schema updated ***
+- yup, `npm install yup`
+- the RHF yup resolver, `npm install @hookform/resolvers yup`
 
 ```JavaScript
 
-import React, { useState } from "react";
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-
-
-
-function MailingList() {
- 
- 
- const mailingListSchema = yup.object().shape({
-    email: yup.string().email('email is not valid').required('you must enter a email'),
-    name: yup.string().required('password is required').min(2, 'name must be a a longer than two letters')
+import React from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+function MailingList(props) {
+  const schema = yup.object().shape({
+    email: yup
+      .string()
+      .email("email is not valid")
+      .required("you must enter a email"),
+    name: yup
+      .string()
+      .required("password is required")
+      .min(2, "name must be a a longer than two letters"),
   });
 
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({ resolver: yupResolver(schema) });
 
-  const { register, handleSubmit,  errors } = useForm({  resolver: yupResolver(schema),});
-  const onSubmit = data => { console.log(data) }
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   return (
-
+    <div>
+      <h1>Join My Mailing List</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
-          <label> Name </label>
-          <input type="text" name="name"   ref={register} />
-          <p> {errors.name && errors.name.message } </p>
-          <label> Email </label>
-          <input type="text" name="email"  ref={register} />
-          <p>{errors.email && errors.email.message }</p>
-          <input type="submit" />
-      </form>);
+        <input {...register("name", { required: true })} />
+        <p> {errors.name && errors.name?.message} </p>
+        <input {...register("email", { required: true })} />
+        <p>{errors.email && errors.email?.message}</p>
+        <input type="submit" />
+      </form>
+    </div>
+  );
 }
 
-export default  MailingList;
+export default MailingList;
 
 ```
 
 In the above example we use yup, not only to define our schema, but also to construct custom error messages that are displayed based on the type of validation error - pretty nice! All we need to do is pass the validation schema into `useForm()`. [Yup offers dozens of different validation rules that we can use](https://github.com/jquense/yup)
 
-
 :::tip
 
 ## Task 3 - Schema Validation
 
-- Install yup  - `npm install yup`
+- Install yup - `npm install yup`
 - Install the resolver - `npm install @hookform/resolvers`
-- Add a validation schema and custom messages to `components/LoginForm.js`  - currently being used in `src/Views/Join.js`
+- Add a validation schema and custom messages to `components/LoginForm.js` - currently being used in `src/Views/Join.js`
 
 :::
 
-# Further Study 
-
+# Further Study
 
 :::tip
 
 ## Task 4 - Create the login view
 
-- Can you adapt/use the  `/src/Components/LoginForm.js` to create a login view.
-  
+- Can you adapt/use the `/src/Components/LoginForm.js` to create a login view.
+
 :::
 
 :::tip
 
-## Task 5 - Refactor and Complete the Checkin Form 
+## Task 5 - Refactor and Complete the Checkin Form
 
-<iframe src="https://solent.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=b006e6d8-b905-41ba-aa7d-ac7500bed290&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+Complete this task if you want a challenge, it really pulls together everything we've learnt so far.
 
->> This task really pulls together everything we have covered so far. I've made a quick video to look at the functionality of the checkin form . 
-
-- Currently the form itself is is nested within a view - `src/Views/Checkin.js`. However, it is not in accordance to the principle that a form should be  "A black box that takes in user input, validates it and outputs this valid data for processing.". To achieve this, extract the checkin form to its own component and add validation.
+- Currently the form itself is is nested within a view - `src/Views/Checkin.js`. However, it is not in accordance to the principle that a form should be "A black box that takes in user input, validates it and outputs this valid data for processing.". To achieve this, extract the checkin form to its own component and add validation.
 
 - Complete the remaining Checkin form functionality. I shall express this functionality as user stories:
 
@@ -332,9 +322,8 @@ In the above example we use yup, not only to define our schema, but also to cons
 
 - As a user, I should see the char count tick downwards as I write my comment, so I know how many chars I have left
 
-- As a user, I should see my score go up or down based on what I select, so I know my points before I checkin. 
+- As a user, I should see my score go up or down based on what I select, so I know my points before I checkin.
 
-- **Note**: the number of points available (max 20) is appended to each label. Often they are binary, e.g. drinking water is 3 or 0. However, diet, worth 10 points, is a sliding scale. Users will deduct a point, up to a maximum of 10 based on their infringements.  Consider how you would use `useEffect` or, perhaps easier, [react-hook-form-watch](https://react-hook-form.com/api#watch) to achieve this task
+- **Note**: the number of points available (max 20) is appended to each label. Often they are binary, e.g. drinking water is 3 or 0. However, diet, worth 10 points, is a sliding scale. Users will deduct a point, up to a maximum of 10 based on their infringements. Consider how you would use `useEffect` or, perhaps easier, [react-hook-form-watch](https://react-hook-form.com/api#watch) to achieve this task
 
 :::
-
