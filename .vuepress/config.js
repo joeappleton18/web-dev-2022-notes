@@ -51,17 +51,17 @@ module.exports = {
         collapsable: true,
         children: ["/sessions/week_6/lecture", "sessions/week_6/"],
       },
-      
+
       {
         title: "Week 7 -  Forms,Validation and Conditional Rendering",
         collapsable: true,
         children: ["/sessions/week_7/lecture", "sessions/week_7/"],
       },
-      // {
-      //   title: "Week 8 -  Firebase Authentication and Custom Hooks",
-      //   collapsable: true,
-      //   children: ["/sessions/week_8/"],
-      // },
+      {
+        title: "Week 8 -  Firebase Authentication and Custom Hooks",
+        collapsable: true,
+        children: ["/sessions/week_8/"],
+      },
       // {
       //   title: "Week 9 -  Managing Data In Firebase",
       //   collapsable: true,
