@@ -371,3 +371,14 @@ Complete the authentication workflow and see if you can work out how to log a us
 - Set up social sign in methods (Facebook and Gmail)
 
 :::
+
+
+## Solution Video 
+
+Below is a video walking you through the solutions for task 7, 8 and 9. Before starting this tutorial, I recommend that you clone the week-8 part solution and use this as your starting point. Simply run the following command:
+
+`git clone -b week-8-part-solution https://github.com/joeappleton18/running-contemp-web-app-solutions.git`
+
+Next, ensure you follow the README.md to connect the project to firebase.
+
+<iframe src="https://solent.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=4961360b-67f9-4e48-9860-ade500bc6924&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
