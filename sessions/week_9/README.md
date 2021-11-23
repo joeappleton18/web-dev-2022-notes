@@ -1,13 +1,16 @@
 # Week 9 - Managing Data Using Firebase
 
-This week, we continue our journey into the the wonderful world of serverless. We will be considering how we can use the firebase document database, [firestore](https://firebase.google.com/docs/firestore). In doing so, we will be answering the following question?
+This week, we continue our journey into the the wonderful world of serverless. We will be considering how we can use the firebase document database, [firestore](https://firebase.google.com/docs/firestore).
+
+In doing so, we will be answering the following question?
+
 ### How can I persist data in my web applications?
 
 :::warning session dependencies
 
 ## Session Dependencies
 
-Make sure that you have the latest of the ongoing class, fitness tracker, project. **The notes for this week refer extensively to this project: 
+Make sure that you have the latest of the ongoing class, fitness tracker, project. The notes for this week refer extensively to this project:
 
 `git clone -b week-8-solutions https://github.com/joeappleton18/running-contemp-web-app-solutions.git`
 
@@ -50,7 +53,7 @@ Creating a database for your project is simple:
 
 - In your firebase project, select Database from the left-hand-side, develop menu section
 
-- Next, click the `Create database`
+- Next, click the `create database`
 
 - We want to start off in test mode, so select this option when prompted
 
@@ -71,7 +74,7 @@ Remember, the data in our database is created from the perspective of a user. To
 ## Task 2 - Exploring the check-in data
 
 - Log-in to your application
-- Navigate to the `/checkin`. You can use the link in the menu or just type the URL in
+- Navigate to the `/checkin`.
 - Next, within `Views/Checkin.js` work out how to set up a `handleSubmit` function that logs to the console the checkin.
 
 <HiddenSection display-text="click me for a hint">
@@ -108,14 +111,14 @@ On completing the above task you will have seen that our check-in data looks lik
 
 ```
 
-The above data structure is close to resembling a document that could be stored in our database. However, look at our application's main dash and you can see that we do not have enough information to display a check-in. For now, I am most concerned that we are missing a userName, userId and photo. This information needs to be added to our check-in object.
+The above data structure is close to resembling a document that could be stored in our database. However, look at our application's main dash, and you can see that we do not have enough information to display a check-in. For now, I am most concerned that we are missing a userName, userId and photo. This information needs to be added to our check-in object.
 
 :::warning
 You may think, why not just add a userId to our check-in and we could look the rest up. Remember, though, we are optimising for quick reads and data structures that resemble our UI. Yes, we are duplicating data; however, this idea, know as denormalisation, is fine in the NoSQL world.
 
 :::
 
-With the above mantras in mind we want to create the following data structure:
+With the above in mind we want to create the following data structure:
 
 ```JavaScript
 
@@ -142,17 +145,25 @@ With the above mantras in mind we want to create the following data structure:
 ## Task 3 - Denormalisation of the checkin data
 
 - Can you structure our current checkin object so it resembles our data structure above
-- First, you will need to pass our user from App.js down to our Checkin component.
+- First, we need to grab the currently logged in user. We can do this by getting the `user` from our `useAuth` hook.
 
-  - In `App.js` pass our user, which has been exported from useAuth, into the checkin component `<Checkin createCheckin={createCheckin} user={user} />`
-  - Within checkin, set up a `user` `prop-type`
-  - See if you can amend the `handleSubmit` function so it adds the extra user fields to our checkin object when the form submits.
-  - There is a slight gotcha, if someone has signed up using email or Google they may not have a userName in which case we want to use their email instead (users always have an email). In JavaScript, you can use the following technique to assign a default value:
+```JavaScript
+import useAuth from "../services/firebase/useAuth";
+...
+const Checkin = (props) => {
+  const { user } = useAuth();
+  ...
+}
+```
+
+- You now have access to the user details
+- There is a slight gotcha, if someone has signed up using email they may not have a userName in which case we want to use their email instead (users always have an email). In JavaScript, you can use the following technique to assign a default value:
 
   `const userName = user.displayName || user.email`;
 
 <HiddenSection display-text="hint">
 
+```JavaScript
     const handleSubmit =  async checkin => {
 
         const ckin = {...checkin,
@@ -162,159 +173,167 @@ With the above mantras in mind we want to create the following data structure:
                           time: new Date()}}
     }
 
+```
+
 </HiddenSection>
 :::
 
+- [Above, I am using the ES6 spread operator to combine the `checkin` object with a second, custom created, object. The second object contains the additional user details that we want to store alongside our checkin]
+
 ## Reading and Writing to Our Database
 
-## Writing Data
+## Writing Data to Firestore
 
 To use the firestore database in our application, we first need to import it.
 
-- Within `/src/App.js` add `import "firebase/firestore";` to your imports. Make sure it is after the firebase import.
+- Remember, we are following a design pattern where we use hooks to communicate with third-party services.
 
-- Next, we are going to create a `useCheckin` service hook that will manage our check-in's collection.
-
-- Create a `src/services/firebase/useCheckin.js` file and add the following code:
+- With the above in mind, create a `src/services/firebase/useCheckin.js` file and add the following code:
 
 ```JavaScript
-import { useState,} from "react";
+import { useState} from "react";
 
-function useCheckins(fStore) {
-  const ref = fStore().collection('checkins');
-    const createCheckin  = checkin => ref.add(checkin);
-    const readCheckin = id =>  ref.read(id);
-    const readCheckins = () =>  ref.get();
-  }
+import {
+  doc,
+  addDoc,
+  collection,
+  getDocs,
+ getFirestore
+} from "firebase/firestore";
 
-  return {create, read, list}
+function useCheckin() {
+  const db = getFirestore();
+  const ref = collection(db, "checkins");
+  const createCheckin = (checkin) => addDoc(ref, checkin);
+  const getCheckins = () => getDocs(ref);
 
+  return {getCheckins, createCheckin}
 }
-export default useCheckins;
+
+export default useCheckin;
 
 ```
 
 Let's unpack what we are doing above:
 
-- `fStore` is a reference to our database that will be passed in by app
+- `const db = getFirestore();` gets a reference to our firestore database.
 
-- `const ref = fStore().collection('checkins');` is a pointer to a checkins collection in our database. If the collection does not exist it will be created, it will be automatically created when the first document is written to the collection
-- We then use the above ref set up functions to add a new checkin `ref.add(checkin);` and also to read our all of the checkin documents from our collection `ref.get();`
-- Finally, we return our functions so they can be used in other components: `return {createCheckin, readCheckin, listCheckin}`
+- `const ref = collection(db, "checkins");` is a pointer to a checkins collection in our database. If the collection does not exist it will be created when the first document is written to the collection
+- We then use the above ref set up functions to add a new checkin `const createCheckin = (checkin) => addDoc(ref, checkin);` and also to read our all of the checkin documents from our collection `getCheckins = () => getDocs(ref);`
+- Finally, we return our functions so they can be used in other components: `return {getCheckins, createCheckin}`
 
-- We are now ready to use our checkin hook in our `src/App.js` component:
-  - If you have not done so already, `import "firebase/firestore";`
-  - Also, import the checkIn hook: `import useCheckin from "./services/firebase/useCheckin";`
-  - Finally, within your app component, call your checkin hook like this:
-- ```JavaScript
+:::tip task
 
-   ...
-       const {
-          createCheckin,
-          readCheckins
-      } = useCheckins(firebase.firestore)
-   ...
+## Task 4 - Make your first database write
 
-  ```
+This task requires us to create our first database write. We are going to be making a checkin. We are going to be working with `src/Views/Checkin.js` to enable this functionality.
 
-  :::tip
+- Import the checkin hook: `import useCheckin from "../services/firebase/useCheckin";`
+- Within your component invoke the hook and pull out the `createCheckin` function:
 
-  ## Task 4 - Make your first database write
+```JavaScript
+    const Checkin = (props) => {
+      ...
+       const { createCheckin } = useCheckin();
+      ...
+  }
+```
 
-  - Pass the checkin `createCheckin` function down to our `checkIn` view as a prop
-  - See if you can write a checkin to the database
+- Now we can write a checkin to our database by simply passing the checkin object constructed on our `onSubmit` event into `createCheckin` hook function:
 
-     <HiddenSection display-text="hint 1">
-               <Checkin  createCheckin={createCheckin}  user={user} />
-     </HiddenSection>
+```JavaScript
+import { useHistory } from "react-router-dom";
+....
+const Checkin = (props) => {
+  const history = useHistory();
 
-  - This is what my final Checkin component looks like:
+.....
+ const handleSubmit = async (checkin) => {
+    const ckin = {
+      ...checkin,
+      ...{
 
+        photo: user.photoURL,
+        userId: user.uid,
+        userName: user.displayName || user.email,
+        time: new Date(),
+      },
+    };
+
+    try {
+      await createCheckin(ckin);
+       history.push("/");
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+```
+
+- If the above worked, you should be redirected to the the dash `"/"` and have data in your database!
   :::
 
+## Reading Checkin Data
+
+- Let's see if we can now read our checkins, we will do this in our top level `/Views/Dash.js`. I think this makes more sense over hosting the state up to our `src/App.js` component.
+
+- First, we need to grab `getCheckins` from our `useCheckinHook`.
+- Within `/Views/Dash.js` add `import useCheckin from "./services/firebase/useCheckin";` to the top of your component.
+- Then is your dash component pull out `getCheckins`, and set up some state to hold the checkins:
+
 ```JavaScript
-
-const Checkin = props => {
-
-  const  {user, createCheckin} = props;
-
-  const handleSubmit =  async checkin => {
-
-    const ckin = {...checkin, ...{photo: user.photoURL, userId: user.uid, userName: user.displayName || user.email, time: new Date()}}
-    createCheckin(ckin);
-  }
-
-  ....
+function Dash() {
+  ...
+  const { getCheckins } = useCheckin();
+  const [checkins, setCheckins] = useState([]);
+  ..
+}
 
 ```
 
-If the above worked, you should now have data in your database. Let's, finally, consider how to read the data.
-
-## Reading Data
-
-- Let's see if we can pull our checkins into our dash. First, from within our `App.js` component , we need to pass `readCheckins` into our dash component `<Dash readCheckins={readCheckins} checkins={checkins} />`
-
-- Within our `Views/Dash.js` component we need to grab `readCheckins` from our props
+- We now need to consider when to call `getCheckins`. We want to do this when the component has rendered. The best way to do this is through using the `useEffect` hook.
 
 ```JavaScript
+import React, { useEffect, useState } from "react";
+...
 function Dash(props) {
 
-  const {checkins, readCheckins} = props;
-
-```
-
-- Next we should set up some state to hold our checkins
-
-```JavaScript
-    const [allCheckins, setAllCheckins] = useState([]);
-```
-
-- Finally we can set up an effect that calls our `readCheckins` function
-
-```JavaScript
-  useEffect(() => {
-
-    const getAllCheckins =  async () => {
-      const aCheckins =  await readCheckins();
-      let checkins = [];
-      aCheckins.forEach(c => checkins.push(c.data()));
-      setAllCheckins(checkins)
+  ...
+   const getCheckinData = async () => {
+    const checkinsSnap = await getCheckins();
+    let checkins = [];
+    if (checkinsSnap.size) {
+      checkinsSnap.forEach((doc) => {
+        checkins.push({ ...doc.data(), ...{ id: doc.id } });
+      });
+      setCheckins(checkins.reverse());
     }
+  };
 
-    getAllCheckins();
+  useEffect(() => {
+    getCheckinData();
+  }, []);
 
-  }, [])
-
+  ...
 ```
 
-- Notice how I set up a nested async function within the useEffect function - which I immediately call. This is because React advises against making the useEffect function async as it could delay the render time.
+- Notice how I call the async function `getCheckinData`, this allows me to avoid making the `useEffect` function async. If I were to make my `useEffect` function `async` it would be placed on the event loop, and delay my function from rendering.
 
-- Firebase does not return our collection's data, instead, it provides a references to the data. The collection reference returned, provides us with a `forEach` method, which I use to construct a checkins array and set the value of that array to our `allCheckins` state.
+- A futher point of note, is I am reversing the checkins `checkins.reverse()` . This is so the latest checkin is show at the top of the dash. It is common, when using `Firebase` to make app level manipulations to data.
 
 ## Home Study
 
-:::tip
+:::tip home study
 
 ## Task 5 - Display the checkin data
 
 - Can you update the dash so it displays checkins from our database
-- At the moment you will still need to use placeholder data for the histogram, we'll solve this issue next week.
-
-:::
-
-:::tip
-
-## Task 6
-
-- Can you create a new collection and an associated hook. The collection will be called `Challenges` . For now, it will hold a single document, containing `challengeName`, `challengeStartDate`, `challengeEndDate`
-- See if you can use your new hook, to read the the single challenge document. You can use this data to populate the top part of our main dash
-
-:::
-
-:::tip
+- At the moment you will still need to use placeholder data for the histogram in the checkins, we'll solve this issue next week.
 
 ## Task 7 (Advanced)
 
-Can you work out how to implement the comment functionality?
+- Can you work out how to implement the comment functionality?
+
+- This is a really interesting challenge. [You should consider using Firebase's realtime data update functionality[(https://firebase.google.com/docs/firestore/query-data/listen)].
 
 :::
