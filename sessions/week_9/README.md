@@ -337,3 +337,7 @@ function Dash(props) {
 - This is a really interesting challenge. [You should consider using Firebase's realtime data update functionality[(https://firebase.google.com/docs/firestore/query-data/listen)].
 
 :::
+
+## Solution Video 
+
+<iframe src="https://solent.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=b5259fc0-7fce-4bd8-8d7c-adea0082f06b&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
