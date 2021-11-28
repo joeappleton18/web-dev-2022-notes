@@ -4,12 +4,8 @@ Welcome to week 10, our final week of formal delivery. This week we are going to
 
 - How can I host my application?
 - How can I secure my database?
-- How can I use Firebase Functions to compliment my database (optional, you'll need to upgrade your firebase project to the spark plan if you want to complete this section)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/emrB3Qimg28" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-:::warning session dependencies
-
+:::warning session dependencies=
 ## Session Dependencies
 
 [Make sure that you have the latest of the ongoing class, fitness tracker, project. \*\*The notes for this week refer extensively to this project:
