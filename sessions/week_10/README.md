@@ -6,23 +6,24 @@ Welcome to week 10, our final week of formal delivery. This week we are going to
 - How can I secure my database?
 
 :::warning session dependencies=
+
 ## Session Dependencies
 
 [Make sure that you have the latest of the ongoing class, fitness tracker, project. \*\*The notes for this week refer extensively to this project:
 
-`git clone -b week-8-solutions https://github.com/joeappleton18/running-contemp-web-app-solutions.git`
+`git clone -b week-9-solutions https://github.com/joeappleton18/running-contemp-web-app-solutions.git`
 
 This week's, and future, setups are a little more involved. You will need to ensure that you add your own firebase credentials. The `README.md` file on my version of the fitness tracker walks you through how to do this.
 :::
 
 ### Essential Reading :closed_book:
 
-:::warning essential reading 
+:::warning essential reading
 The firebase documentation on:
 
 - [Hosting](https://firebase.google.com/docs/hosting)
 - [security rules](https://firebase.google.com/docs/rules)
-:::
+  :::
 
 ## Introduction
 

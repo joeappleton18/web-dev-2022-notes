@@ -1,4 +1,4 @@
-### Assessment 1: Report and Mock Up (due: 4pm, Friday, 12th November )
+### Assessment 1: Report and Mock Up 
 
 ### Coursework Assessment Brief
 
@@ -7,7 +7,7 @@
 | Module Title:                                     | Contemporary Web Applications                                                                                                                                                                                                  |
 | :------------------------------------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Module Code:                                      | COM623                                                                                                                                                                                                                         |
-| Module Leader:                                    | Joe Appleton                                                                                                                                                                                                                   |
+| Module Leader:                                    | Check SOL                                                                                                                                                                                                                   |
 | Level:                                            | 6                                                                                                                                                                                                                              |
 | Assessment Title:                                 | 1. Report                                                                                                                                                                                                                      |
 | Assessment Number:                                | 1                                                                                                                                                                                                                              |
@@ -17,8 +17,8 @@
 | Individual/Group:                                 | Individual                                                                                                                                                                                                                     |
 | Assessment Weighting:                             | 30%                                                                                                                                                                                                                            |
 | Issue Date:                                       | Oct                                                                                                                                                                                                                            |
-| Hand In Date:                                     | By 4pm, Friday, 12th November 2021                                                                                                                                                                                             |
-| Mode of Submission:                               | On the course SOL page                                                                                                                                                                                                         |
+| Hand In Date:                                     |  Check SOL                                                                                                                                                                                             |
+| Mode of Submission:                               | Check SOL                                                                                                                                                                                                         |
 | Number of copies to be submitted:                 | 1                                                                                                                                                                                                                              |
 
 ## Assessment Task

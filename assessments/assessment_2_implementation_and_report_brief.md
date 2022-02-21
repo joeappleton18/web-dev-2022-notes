@@ -1,4 +1,4 @@
-# Assessment 2: Implementation and a Report (in the form of technical documentation)(due: 4pm, Friday, 14th January)
+# Assessment 2: Implementation and a Report (in the form of technical documentation)
 
 ### Coursework Assessment Brief
 
@@ -7,7 +7,7 @@
 | Module Title:                                     | Contemporary Web Applications                                                                                                                                                                                                  |
 | :------------------------------------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Module Code:                                      | COM623                                                                                                                                                                                                                         |
-| Module Leader:                                    | Joe Appleton                                                                                                                                                                                                                   |
+| Module Leader:                                    | Check SOL                                                                                                                                                                                                                      |
 | Level:                                            | 6                                                                                                                                                                                                                              |
 | Assessment Title:                                 | 2. Implementation and Report                                                                                                                                                                                                   |
 | Assessment Number:                                | 2                                                                                                                                                                                                                              |
@@ -17,7 +17,7 @@
 | Individual/Group:                                 | Individual                                                                                                                                                                                                                     |
 | Assessment Weighting:                             | 70%                                                                                                                                                                                                                            |
 | Issue Date:                                       | Oct                                                                                                                                                                                                                            |
-| Hand In Date:                                     | 4pm, Friday, 14th January 2022                                                                                                                                                                                                 |
+| Hand In Date:                                     | Check SOL                                                                                                                                                                                                                      |
 | Mode of Submission:                               | On the course SOL page                                                                                                                                                                                                         |
 | Number of copies to be submitted:                 | 1                                                                                                                                                                                                                              |
 
