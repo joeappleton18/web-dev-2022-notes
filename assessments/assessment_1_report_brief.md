@@ -1,4 +1,4 @@
-### Assessment 1: Report and Mock Up 
+### Assessment 1: Report and Mock Up (Due: 4 pm, Friday, 11th November, 2022) 
 
 ### Coursework Assessment Brief
 
@@ -17,8 +17,8 @@
 | Individual/Group:                                 | Individual                                                                                                                                                                                                                     |
 | Assessment Weighting:                             | 30%                                                                                                                                                                                                                            |
 | Issue Date:                                       | Oct                                                                                                                                                                                                                            |
-| Hand In Date:                                     |  Check SOL                                                                                                                                                                                             |
-| Mode of Submission:                               | Check SOL                                                                                                                                                                                                         |
+| Hand In Date:                                     |  Friday, 11th November, 2022                                                                                                                                                                                            |
+| Mode of Submission:                               | A PDF file submitted to SOL                                                                                                                                                                                                         |
 | Number of copies to be submitted:                 | 1                                                                                                                                                                                                                              |
 
 ## Assessment Task

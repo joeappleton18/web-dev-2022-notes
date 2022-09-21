@@ -1,4 +1,4 @@
-# Assessment 2: Implementation and a Report (in the form of technical documentation)
+# Assessment 2: Implementation and a Report (in the form of technical documentation. DUE:  4 pm, Friday, 13th January, 2023)
 
 ### Coursework Assessment Brief
 
@@ -17,7 +17,7 @@
 | Individual/Group:                                 | Individual                                                                                                                                                                                                                     |
 | Assessment Weighting:                             | 70%                                                                                                                                                                                                                            |
 | Issue Date:                                       | Oct                                                                                                                                                                                                                            |
-| Hand In Date:                                     | Check SOL                                                                                                                                                                                                                      |
+| Hand In Date:                                     |  4 pm, Friday, 13th January, 2023                                                                                                                                                                   |
 | Mode of Submission:                               | On the course SOL page                                                                                                                                                                                                         |
 | Number of copies to be submitted:                 | 1                                                                                                                                                                                                                              |
 
