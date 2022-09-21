@@ -8,7 +8,7 @@ While there will be no live teams sessions, we will be using it to host in-class
 
 ![](./assets/joining_a_team.png)
 
-Open teams and select “Teams” from the sidebar. Next, click join or create a team and enter this join code (fik06r9). You are now a member of our module team.
+Open teams and select “Teams” from the sidebar. Next, click join or create a team and enter this join code (mf0yfuz). You are now a member of our module team.
 
 ## Introduction to Module
 

@@ -1,5 +1,5 @@
 module.exports = {
-  base: "/web-dev-2021-notes/",
+  base: "/web-dev-2022-notes/",
   dest: "docs",
   themeConfig: {
     displayAllHeaders: true,
@@ -24,55 +24,55 @@ module.exports = {
         collapsable: true,
         children: ["/sessions/week_1/lecture", "/sessions/week_1/"],
       },
-      {
-        title: "Week 2 - Introducing React",
-        collapsable: true,
-        children: ["/sessions/week_2/lecture", "/sessions/week_2/"],
-      },
-      {
-        title: "Week 3 - Loops",
-        collapsable: true,
-        children: ["/sessions/week_3/lecture", "/sessions/week_3/"],
-      },
-      {
-        title: "Week 4 - Styles",
-        collapsable: true,
-        children: ["/sessions/week_4/lecture", "/sessions/week_4/"],
-      },
+      // {
+      //   title: "Week 2 - Introducing React",
+      //   collapsable: true,
+      //   children: ["/sessions/week_2/lecture", "/sessions/week_2/"],
+      // },
+      // {
+      //   title: "Week 3 - Loops",
+      //   collapsable: true,
+      //   children: ["/sessions/week_3/lecture", "/sessions/week_3/"],
+      // },
+      // {
+      //   title: "Week 4 - Styles",
+      //   collapsable: true,
+      //   children: ["/sessions/week_4/lecture", "/sessions/week_4/"],
+      // },
 
-      {
-        title: "Week 5 - Design Thinking Workshop",
-        collapsable: true,
-        children: ["/sessions/week_5/"],
-      },
+      // {
+      //   title: "Week 5 - Design Thinking Workshop",
+      //   collapsable: true,
+      //   children: ["/sessions/week_5/"],
+      // },
 
-      {
-        title: "Week 6 - State And Routes",
-        collapsable: true,
-        children: ["/sessions/week_6/lecture", "sessions/week_6/"],
-      },
+      // {
+      //   title: "Week 6 - State And Routes",
+      //   collapsable: true,
+      //   children: ["/sessions/week_6/lecture", "sessions/week_6/"],
+      // },
 
-      {
-        title: "Week 7 -  Forms,Validation and Conditional Rendering",
-        collapsable: true,
-        children: ["/sessions/week_7/lecture", "sessions/week_7/"],
-      },
-      {
-        title: "Week 8 -  Firebase Authentication and Custom Hooks",
-        collapsable: true,
-        children: ["/sessions/week_8/"],
-      },
-      {
-        title: "Week 9 -  Managing Data In Firebase",
-        collapsable: true,
-        children: ["/sessions/week_9/lecture", "/sessions/week_9/"],
-      },
-      {
-        title: "Week 10 -  Hosting, Rules and Cloud Functions",
-       collapsable: true,
-       children: ["/sessions/week_10/"]
-    
-      },
+      // {
+      //   title: "Week 7 -  Forms,Validation and Conditional Rendering",
+      //   collapsable: true,
+      //   children: ["/sessions/week_7/lecture", "sessions/week_7/"],
+      // },
+      // {
+      //   title: "Week 8 -  Firebase Authentication and Custom Hooks",
+      //   collapsable: true,
+      //   children: ["/sessions/week_8/"],
+      // },
+      // {
+      //   title: "Week 9 -  Managing Data In Firebase",
+      //   collapsable: true,
+      //   children: ["/sessions/week_9/lecture", "/sessions/week_9/"],
+      // },
+      // {
+      //   title: "Week 10 -  Hosting, Rules and Cloud Functions",
+      //  collapsable: true,
+      //  children: ["/sessions/week_10/"]
+
+      // },
     ],
   },
 };
