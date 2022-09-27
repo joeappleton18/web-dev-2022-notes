@@ -7,12 +7,14 @@ By the end of this week you should be able to answer the following questions:
 
 <iframe src="https://solent.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=eac06dd3-4f6d-4f91-9de8-ac46013224e0&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
+>> Task two walk through 
+
 The purpose of this session is to ensure that everyone is up-to-speed with the latest version of JavaScript. To achieve this, we are going to work through the perennial [TodoList](https://github.com/tastejs/todomvc/) exercise.
 
 In this session, we are focussing on vanilla JS; however, from next week onwards we will be using React.
 
 ## Session Dependencies
-
+- [You will need to ensure you have the version control tool Git installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)    
 - You will need to ensure that you have installed [node.js](https://nodejs.org/en/)
 - While you can use any text editor for this session, I recommend that you install [VS Code](https://code.visualstudio.com/download)
 
@@ -41,6 +43,8 @@ In order to package our application we need to a build tool, [WebPack](https://w
 ## Why do we even need WebPack?
 
 <iframe src="https://solent.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=92986265-8a7d-4278-a843-ac46013224aa&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
+>> Task 3 - 7 walk through
 
 To understand why we need a tool such as WebPack, we must first consider a modern web application architecture and the practical goals of this unit.
 
@@ -132,7 +136,7 @@ At the moment our application does not resemble a todo list, in-fact, there is n
 - An amazing feature of webpack is that, by using different loaders, it allows us to treat a wide range of different assets as JavaScript modules - odd, but very useful. Case in point, add the following lines of code to the top of `main.js`:
 
 ```js
-import "../main.scss";
+import "./main.css";
 import img1 from "../assets/top-left-elips.png";
 import img2 from "../assets/bottom-right-elips.png";
 ```
@@ -166,6 +170,14 @@ alt="background"
 <!-- /.wrapper -->`;
 ```
 
+:::
+
+::: details Click me to view the solution
+```js
+function render() {
+	document.querySelector('#app').innerHTML = view;
+}
+```
 :::
 
 ## Breaking Down an Application Into Components

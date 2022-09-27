@@ -42,3 +42,13 @@ There are two assessments that will allow me to gauge how well you have done.
 | 10 . | Hosting, Security Rules and Cloud Functions  |
 | 11 . | Assessment Support                           |
 | 12 . | Assessment Support                           |
+## Using these notes
+
+If you are running a franchise course, then please clone these notes and host them on your own GitHub pages. Please don't link to my instance of the notes, the dates will not match. 
+
+1. Clone the repository: `git clone https://github.com/joeappleton18/web-dev-2022-notes.git`
+2. Create an empty GitHub repository to host the notes 
+3. In the settings of the GitHub repository, enable GitHub pages
+4. Add the remote to your project: `git remote add origin <address>`
+5. Push the notes to the repository, setting the upstream : `git push --set-upstream origin master`
+6. Update and deploy the notes: `npm run deploy`
