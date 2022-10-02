@@ -24,11 +24,11 @@ module.exports = {
         collapsable: true,
         children: ["/sessions/week_1/lecture", "/sessions/week_1/"],
       },
-      // {
-      //   title: "Week 2 - Introducing React",
-      //   collapsable: true,
-      //   children: ["/sessions/week_2/lecture", "/sessions/week_2/"],
-      // },
+      {
+        title: "Week 2 - Introducing React",
+        collapsable: true,
+        children: ["/sessions/week_2/lecture", "/sessions/week_2/"],
+      },
       // {
       //   title: "Week 3 - Loops",
       //   collapsable: true,
