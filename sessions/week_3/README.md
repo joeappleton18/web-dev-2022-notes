@@ -25,7 +25,7 @@ By the end of the session, you should:
 
 ## Why do we need to iterate over data structures?
 
-Typically, front end applications receive data from the back-end in a list format. Typically, in the context of Web Development, this list will take the form of JSON array:
+Typically, front end applications receive data from the back-end in a list format.  In the context of Web Development, this list will take the form of JSON array:
 
 ```json
 [
@@ -56,17 +56,19 @@ console.log(obj);
  */
 ```
 
-> > An example of converting a JSON object to an array of JavaScript object literals
+>> An example of converting a JSON object to an array of JavaScript object literals
 
-### Displaying iterative data in React
+### Displaying lists in React
 
 Often you will have to iterate over some data structures, like the one above, to construct your React views, this is very easy to achieve in JSX.
 
 ```js
+....
 const numbers = [1, 2, 3, 4, 5];
-const listItems = numbers.map((number) => (
+return  const listItems = numbers.map((number) => (
   <li key={number.toString()}>{number}</li>
 ));
+....
 ```
 
 [We can simply use an array map function (see above) to render array structured data into our views](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map). Notice how we are embedding pure JavaScript into our views.
