@@ -40,11 +40,11 @@ module.exports = {
         children: ["/sessions/week_4/lecture", "/sessions/week_4/"],
       },
 
-      // {
-      //   title: "Week 5 - Design Thinking Workshop",
-      //   collapsable: true,
-      //   children: ["/sessions/week_5/"],
-      // },
+      {
+        title: "Week 5 - Design Thinking Workshop",
+        collapsable: true,
+        children: ["/sessions/week_5/"],
+      },
 
       // {
       //   title: "Week 6 - State And Routes",
