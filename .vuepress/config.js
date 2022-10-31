@@ -46,11 +46,11 @@ module.exports = {
         children: ["/sessions/week_5/"],
       },
 
-      // {
-      //   title: "Week 6 - State And Routes",
-      //   collapsable: true,
-      //   children: ["/sessions/week_6/lecture", "sessions/week_6/"],
-      // },
+      {
+        title: "Week 6 - State And Routes",
+        collapsable: true,
+        children: ["/sessions/week_6/lecture", "sessions/week_6/"],
+      },
 
       // {
       //   title: "Week 7 -  Forms,Validation and Conditional Rendering",

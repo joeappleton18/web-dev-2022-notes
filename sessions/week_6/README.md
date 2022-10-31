@@ -74,7 +74,7 @@ The goal of this task is to restructure our application to conform to the above 
 
 Create the file `src/Views/Dash.js`
 
-Boostrap it as a blank component. You can use the following code:
+Bootstrap it as a blank component. You can use the following code:
 
 ```js
 import React from "react";
@@ -111,9 +111,12 @@ function App() {
 Since we are going to be using a router to serve up different views, it would be handy to have more than just a single view. With this in mind, set up the below View components, that simply render an `<h1> </h1>` containing the name of the component e.g.
 
 ```js
--Views / Checkin.js - Views / Join.js - Views / Login.js - Views / Profile.js;
+- Views /
+    - Checkin.js 
+    - Join.js 
+    - Login.js 
+    - Profile.js;
 ```
-
 ::::
 
 ## Configuring Routing
@@ -128,7 +131,7 @@ While there are several Routing possibilities, the [React Router](https://reactt
 
 The react-router is simple to install and configure:
 
-- run `npm install react-router-dom`
+- run `npm install react-router-dom@5` 
 - next, we need to wrap our entire application in the `<Router>` component.
 - open `src/index.js` and wrap your `<App>` in the `<Router>` component. Your code should then resemble the following:
 
