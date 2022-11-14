@@ -254,7 +254,7 @@ function MailingList(props) {
       .required("you must enter a email"),
     name: yup
       .string()
-      .required("password is required")
+      .required("name is required")
       .min(2, "name must be a a longer than two letters"),
   });
 
@@ -272,9 +272,9 @@ function MailingList(props) {
     <div>
       <h1>Join My Mailing List</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input {...register("name", { required: true })} />
+        <input {...register("name")} />
         <p> {errors.name && errors.name?.message} </p>
-        <input {...register("email", { required: true })} />
+        <input {...register("email")} />
         <p>{errors.email && errors.email?.message}</p>
         <input type="submit" />
       </form>
