@@ -188,7 +188,10 @@ Using the notes above, lock your application down. Login and Sign up should be t
 Setting up firebase in our project is fairly straightforward. First, we need to import our dependencies, usually, you would do this in the highest level component `src/App.js`:
 
 ```javascript
+...
 import { initializeApp } from "firebase/app";
+import firebaseConfig from "./config/firebaseConfig";
+...
 ```
 
 - Above, we have imported firebase services surrounding authentication and the ability to support a email sign up flow.
@@ -199,11 +202,12 @@ import { initializeApp } from "firebase/app";
 function App() {
   ...
     const app = initializeApp(firebaseConfig);
+    const { isAuthenticated } = useAuth();
   ...
 }
 ```
 
-- That's it, you should now have access to the firebase suite of products in your application!
+- That's it, you should now have access to the firebase suite of products in your application! **Note, make sure you *
 
 :::tip
 
@@ -243,32 +247,42 @@ import {
 ```JavaScript
 
 function useAuth() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const auth = getAuth();
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      console.log(user);
-      setIsAuthenticated(true);
-      return;
-    }
-    setIsAuthenticated(false);
-    return;
-  });
+	const [isAuthenticated, setIsAuthenticated] = useState(false);
+	const auth = getAuth();
 
-  const createEmailUser = (email, password) =>
-    createUserWithEmailAndPassword(auth, email, password);
+	useEffect(() => {
+	  
+		onAuthStateChanged(auth, (user) => {
+			if (user) {
+				console.log(user);
+				setIsAuthenticated(true);
+				return;
+			}
+			setIsAuthenticated(false);
+			console.log("auth called");
+			return;
+		});
+	  
+	}, [setIsAuthenticated, auth])
+	
+	
 
-  const signInEmailUser = (email, password) =>
-    signInWithEmailAndPassword(auth, email, password);
+	const createEmailUser = (email, password) =>
+		createUserWithEmailAndPassword(auth, email, password);
 
-  const signUserOut = () => signOut(auth);
+	const signInEmailUser = (email, password) =>
+		signInWithEmailAndPassword(auth, email, password);
 
-  return { createEmailUser, isAuthenticated, signInEmailUser, signUserOut };
+	const signUserOut = () => signOut(auth);
+
+	return { createEmailUser, isAuthenticated, signInEmailUser, signUserOut };
 }
+
+export default useAuth;
 ```
 
 - Above, I am initiating a new authentication object, `const auth = getAuth();`. Notice how this newly minted `auth` object is then passed into each further auth method.
-- Next, I am using `onAuthStateChanged` to set up a listener that is called when a user authentication event occurs. Notice how I toggle the is authenticated state based on the `user` being set.
+- Next, I am using `onAuthStateChanged` to set up a listener that is called when a user authentication event occurs. Notice how I toggle the is authenticated state based on the `user` being set. I have placed this in a `useEffect` function so it only runs once. 
 - Next, observe how `createEmailUser`, `signInEmailUser` and `signUserOut` are wrappers around our firebase functions. This allows us a little more control.
 - Finally, I am returning the methods to expose them to the wider application `return { createEmailUser, isAuthenticated, signInEmailUser, signUserOut };`
 - That's it we are ready to go, and authenticate a user!
