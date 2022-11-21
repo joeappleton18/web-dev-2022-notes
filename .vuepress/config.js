@@ -60,7 +60,7 @@ module.exports = {
       {
         title: "Week 8 -  Firebase Authentication and Custom Hooks",
         collapsable: true,
-        children: ["/sessions/week_8/"],
+        children: ["/sessions/week_8/lecture", "/sessions/week_8/"],
       },
       // {
       //   title: "Week 9 -  Managing Data In Firebase",
