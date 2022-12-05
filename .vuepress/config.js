@@ -67,12 +67,12 @@ module.exports = {
         collapsable: true,
         children: ["/sessions/week_9/lecture", "/sessions/week_9/"],
       },
-      // {
-      //   title: "Week 10 -  Hosting, Rules and Cloud Functions",
-      //  collapsable: true,
-      //  children: ["/sessions/week_10/"]
+      {
+        title: "Week 10 -  Hosting, Rules and Cloud Functions",
+       collapsable: true,
+       children: ["/sessions/week_10/"]
 
-      // },
+      },
     ],
   },
 };

@@ -38,15 +38,27 @@ The Firebase CLI is simple to install:
 - First, ensure that you have Node.js v8.0.0 or later installed (this should be the case)
 - Next, from within a terminal or shell run `npm install -g firebase-tools`. The `-g` option globally installs `npm` packages.
 
+:::warning
+ - If you are working on the university computers, you can't do global installs `npm install -g firebase-tools`. 
+
+- Instead, you will need to install the firebase cli locally: `npm install -D firebase-tools` 
+
+- Next, wherever I say run the `firebase` command pre-append `npx` (e.g., `firebase login` becomes `npx firebase login`)
+:::
+
 :::tip
 
-## Task 1 - Getting Started with the CLI and Deploying to Hosting
 
+::tip
+
+## Task 1 - Getting Started with the CLI and Deploying to Hosting
+![](./settings.png)
+0.  To use the latest version of the CLI, you'll need to set the `Default GCP resource location` from your project's settings in the firebase dashboard.
 1. Use the steps above to install the CLI
 2. Within the terminal authenticate the CLI by running `firebase login`
 3. Next, within the terminal, navigate to the root of your goal tracking application and run `firebase init`.
 
-The video below that walks you through setting up the CLI products that we need. When prompted, you will need to make sure that you select the firebase project that contains your goal tracking application.
+The video below that walks you through setting up the CLI products that we need, press space to select things. When prompted, you will need to make sure that you select the firebase project that contains your goal tracking application.
 
 <iframe src="https://solent.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d38c636e-ff2c-4ac0-ae7b-ab8700c9e84b&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" width=720 height=405 style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
@@ -59,7 +71,7 @@ The video below that walks you through setting up the CLI products that we need.
 
 - That's it! If all has worked, your application should have been deployed to its own custom URL. You may want to add the hosting deployment command, and further commands you use, to your scripts object in your `package.json` file.
 
-:::
+
 
 ## Securing your Firebase Database
 
@@ -94,7 +106,7 @@ The above code is an example ensures that only logged in users can read/write to
 - `request` is a global var that firebase makes available to us. If `request.auth.uid != null;` is set then the user is logged-in.
 
 - We can deploy our new updated rules by running: `firebase deploy --only firestore:rules`.
-
+::: 
 :::tip
 
 ## Task 2
